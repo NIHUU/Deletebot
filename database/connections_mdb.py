@@ -1,13 +1,13 @@
 import pymongo
 
-from info import DATABASE_URI , DATABASE_NAME
+from info import DATABASE_URI, DATABASE_NAME
 
 import logging
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
-myclient = pymongo.MongoClient(DATABASE_NAME)
-mydb = myclient[DATABASE_URI]
+myclient = pymongo.MongoClient(DATABASE_URI)
+mydb = myclient[DATABASE_NAME]
 mycol = mydb['CONNECTION']   
 
 
@@ -133,4 +133,3 @@ async def delete_connection(user_id, group_id):
     except Exception as e:
         logger.exception(f'Some error occured! {e}', exc_info=True)
         return False
-
