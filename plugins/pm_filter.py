@@ -193,7 +193,7 @@ async def next_page(bot, query):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', 'dupe'),
+            InlineKeyboardButton(f'ғɪʟᴇs {len(files)}', 'dupe'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
