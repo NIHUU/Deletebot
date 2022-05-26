@@ -150,8 +150,6 @@ async def who_is(client, message):
 
 @Client.on_message(filters.command("help"))
 async def help(client, message):
-
-
         buttons = [[
             InlineKeyboardButton('ᴍᴀ-ғɪʟᴛᴇʀ', callback_data='manuelfilter'),
             InlineKeyboardButton('ᴀᴜ-ғɪʟᴛᴇʀ', callback_data='autofilter'),
@@ -175,7 +173,8 @@ async def help(client, message):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "eth":
+@Client.on_message(filters.command("eth"))
+async def help(client, message):
         buttons = [[ 
             InlineKeyboardButton('ɢ-ᴛʀᴀɴs', callback_data='gtrans'),
             InlineKeyboardButton('ᴜʀʟ-sʜʀᴛɴᴇʀ', callback_data='urlshort'),
@@ -199,7 +198,8 @@ async def help(client, message):
             reply_markup=reply_markup,
             parse_mode='html'
         )  
-    elif query.data == "prop":
+@Client.on_message(filters.command("prop"))
+async def help(client, message):
         buttons = [[ 
             InlineKeyboardButton('ᴊsᴏɴᴇ', callback_data='son'),
             InlineKeyboardButton('ᴘᴀsᴛᴇ', callback_data='pastes'),
@@ -210,7 +210,7 @@ async def help(client, message):
             InlineKeyboardButton('ᴍᴜᴛᴇ', callback_data='restric')            
             ],[
             InlineKeyboardButton('ғᴜɴ', callback_data='fun'), 
-            InlineKeyboardButton('ᴅᴇᴘʟᴏʏ', callback_data='deploy'),
+            InlineKeyboardButton('ғᴏɴᴛ', callback_data='fond'),
             InlineKeyboardButton('ᴘɪɴ', callback_data='pin')           
             ],[
             InlineKeyboardButton('⪻ ʙᴀᴄᴋ', callback_data='eth'),
@@ -309,5 +309,3 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
     else:
         await quer_y.message.edit(caption, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=False)
     await quer_y.answer()
-
-
