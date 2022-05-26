@@ -1587,7 +1587,7 @@ async def advantage_spell_chok(msg):
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]]        
-        k = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+        k = await msg.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                       reply_markup=InlineKeyboardMarkup(btn))        
         await asyncio.sleep(40)
         await k.delete()
@@ -1624,7 +1624,7 @@ async def advantage_spell_chok(msg):
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]]           
-        k=await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+        k=await msg.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                       reply_markup=InlineKeyboardMarkup(btn))        
         await asyncio.sleep(40)
         await k.delete()
@@ -1637,7 +1637,7 @@ async def advantage_spell_chok(msg):
     ],[
         InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
     ]]
-    k = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+    k = await msg.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                       reply_markup=InlineKeyboardMarkup(btn))        
     await asyncio.sleep(40)
     await k.delete()
