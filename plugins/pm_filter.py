@@ -1221,25 +1221,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "warn":
-        buttons = [[
-            InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
-        ]]
-        reply1 = await query.message.reply_text(
-            text="▢▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply2 = await reply1.edit_text(
-            text="▣▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply3 = await reply2.edit_text(
-            text="▣▣▢"
-        )
-        await asyncio.sleep(0.5)
-        reply4 = await reply3.edit_text(
-            text="▣▣▣"
-        )
+   
         await reply4.delete()
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1515,7 +1497,7 @@ async def auto_filter(client, msg, spoll=False):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', 'dupe'),
+            InlineKeyboardButton(f'ғɪʟᴇs {len(files)}', 'dupe'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
@@ -1605,7 +1587,8 @@ async def advantage_spell_chok(msg):
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]]        
-        k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
+        k = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+                                      reply_markup=InlineKeyboardMarkup(btn))        
         await asyncio.sleep(40)
         await k.delete()
         await msg.delete()
@@ -1641,7 +1624,8 @@ async def advantage_spell_chok(msg):
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]]           
-        k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
+        k=await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+                                      reply_markup=InlineKeyboardMarkup(btn))        
         await asyncio.sleep(40)
         await k.delete()
         await msg.delete()
@@ -1653,7 +1637,8 @@ async def advantage_spell_chok(msg):
     ],[
         InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
     ]]
-    k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
+    k = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+                                      reply_markup=InlineKeyboardMarkup(btn))        
     await asyncio.sleep(40)
     await k.delete()
     await msg.delete()
