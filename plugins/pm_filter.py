@@ -173,7 +173,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🎪 {get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"▫ {get_size(file.file_size)}  ▸  {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -191,6 +191,14 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', 'dupe'),
+            InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
+            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
+        ]
+    )
+        
 
     if 0 < offset <= 10:
         off_set = 0
@@ -199,23 +207,11 @@ async def next_page(bot, query):
     else:
         off_set = offset - 10
     if n_offset == 0:
-       
-        btn.insert(0,
-            [InlineKeyboardButton(text="💢 ᴊᴏɪɴ ᴏᴜʀ ɢʀᴏᴜᴘ 💢",url="https://t.me/movie_lookam")]
-        )
-        btn.insert(1,
-          [
-            InlineKeyboardButton(f'🦋  {search}  🦋', 'dupe'),
-            InlineKeyboardButton(f'🗂️ ғɪʟᴇs : {len(files)}', 'dupe')
-          ]
-        )
         btn.append(
             [InlineKeyboardButton("⪻ ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"🗓️ ᴘᴀɢᴇ {round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages")]
         )
-        
-        
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"🗓️ ᴘᴀɢᴇ{round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
@@ -513,7 +509,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("📥  ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ  📥", url = ms.link)
                         ],
                         [
-                            InlineKeyboardButton("⚠️ ᴄᴀɴɴᴏᴛ ᴀᴄᴄᴇs ❓ ᴄʟɪᴄᴋ ʜᴇʀᴇ ⚠️", url = f"{CH_LINK}")
+                            InlineKeyboardButton("⚠️ ᴄᴀɴɴᴏᴛ ᴀᴄᴄᴇss ❓ ᴄʟɪᴄᴋ ʜᴇʀᴇ ⚠️", url = f"{CH_LINK}")
                         ]
                     ]
                 )
@@ -796,23 +792,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "pages":
         await query.answer()
     elif query.data == "samst":
-
         buttons = [[
-
             InlineKeyboardButton('🦋 ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs 🦋', callback_data='start')
-
         ]]
-
         reply_markup = InlineKeyboardMarkup(buttons)
-
         await query.message.edit_text(
-
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-
             reply_markup=reply_markup,
-
             parse_mode='html'
-
         )
     elif query.data == "start":
         buttons = [[
@@ -901,7 +888,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴡʜᴏ-ɪs', callback_data='whois')           
             ],[
             InlineKeyboardButton('⪻ ʙᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('🔮 sᴛᴀᴛᴜs', callback_data='statsx'),
+            InlineKeyboardButton('WARN', callback_data='warn'),
             InlineKeyboardButton('ɴᴇxᴛ ⪼', callback_data='prop')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)       
@@ -921,7 +908,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴍᴜᴛᴇ', callback_data='restric')            
             ],[
             InlineKeyboardButton('ғᴜɴ', callback_data='fun'), 
-            InlineKeyboardButton('ᴅᴇᴘʟᴏʏ', callback_data='deploy'),
+            InlineKeyboardButton('ғᴏɴᴛ', callback_data='fond'),
             InlineKeyboardButton('ᴘɪɴ', callback_data='pin')           
             ],[
             InlineKeyboardButton('⪻ ʙᴀᴄᴋ', callback_data='eth'),
@@ -993,7 +980,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝙼𝚄𝚃𝙴', callback_data='restric')            
             ],[
             InlineKeyboardButton('𝙵𝚄𝙽', callback_data='fun'), 
-            InlineKeyboardButton('𝙳𝙴𝙿𝙻𝙾𝚈', callback_data='deploy'),
+            InlineKeyboardButton('ғᴏɴᴅ', callback_data='fond'),
             InlineKeyboardButton('𝙿𝙸𝙽', callback_data='pin')           
             ],[
             InlineKeyboardButton('‹‹ 𝙱𝙰𝙲𝙺', callback_data='eth'),
@@ -1022,6 +1009,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+    elif query.data == "movss":
+        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴋɢꜰ ᴄʜᴀᴘᴛᴇʀ 2  2022\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n©  ᴄɪɴᴇᴍᴀʟᴏᴏᴋᴀᴍ", show_alert=True)
+
+    elif query.data == "moviis":  
+        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ʟᴏᴋɪ S01 E01\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© ᴄɪɴᴇᴍᴀʟᴏᴏᴋᴀᴍ", show_alert=True)   
+
     elif query.data == "about":
         buttons = [[
             InlineKeyboardButton("⪻ ʙᴀᴄᴋ", callback_data='start'),
@@ -1031,9 +1024,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),
-            disable_web_page_preview = True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode='html',
+            disable_web_page_preview=True
         )
     elif query.data == "restric":
         buttons = [[
@@ -1057,6 +1050,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+    elif query.data == "malspell":
+        btn = [[
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+        ],[
+            InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇸", callback_data="engspell")
+        ]] 
+        await query.message.edit_text(script.MALAYALMSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))
+    elif query.data == "engspell":
+        btn = [[
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+        ],[
+            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+        ]] 
+        await query.message.edit_text(script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))
+        
     elif query.data == "whois":
         buttons = [[
             InlineKeyboardButton('⪻ ʙᴀᴄᴋ', callback_data='help')
@@ -1190,13 +1200,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )         
-    elif query.data == "source":
+    elif query.data == "fond":
         buttons = [[
-            InlineKeyboardButton('⪻ ʙᴀᴄᴋ', callback_data='about')
+            InlineKeyboardButton('⪻ ʙᴀᴄᴋ', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.SOURCE_TXT,
+            text=script.FOND_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -1208,6 +1218,33 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.MANUELFILTER_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "warn":
+        buttons = [[
+            InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
+        ]]
+        reply1 = await query.message.reply_text(
+            text="▢▢▢"
+        )
+        await asyncio.sleep(0.5)
+        reply2 = await reply1.edit_text(
+            text="▣▢▢"
+        )
+        await asyncio.sleep(0.5)
+        reply3 = await reply2.edit_text(
+            text="▣▣▢"
+        )
+        await asyncio.sleep(0.5)
+        reply4 = await reply3.edit_text(
+            text="▣▣▣"
+        )
+        await reply4.delete()
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.WARN_TXT,
+            disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -1338,16 +1375,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "deploy":
-        buttons = [[
-            InlineKeyboardButton('⪻ ʙᴀᴄᴋ', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.DEPLOY_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
+    
     elif query.data == "stats":
         buttons = [[
             InlineKeyboardButton('⪻ ʙᴀᴄᴋ', callback_data='help'),
@@ -1465,7 +1493,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"▫ {get_size(file.file_size)}  ▸  {file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -1482,39 +1510,31 @@ async def auto_filter(client, msg, spoll=False):
                     callback_data=f'{pre}_#{file.file_id}',
                 ),
             ]
+    
             for file in files
         ]
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', 'dupe'),
+            InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
+            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
+        ]
+    )
 
     if offset != "":
         key = f"{message.chat.id}-{message.message_id}"
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
-        btn.insert(0,
-            [InlineKeyboardButton(text="💢 ᴊᴏɪɴ ᴏᴜʀ ɢʀᴏᴜᴘ 💢",url="https://t.me/movie_lookam")]
-        )
-        btn.insert(1,
-          [
-            InlineKeyboardButton(f'🦋  {search}  🦋', 'dupe'),
-            InlineKeyboardButton(f'🗂️ ғɪʟᴇs : {len(files)}', 'dupe')
-          ]
-        )
+        
         btn.append(
             [InlineKeyboardButton(text=f"🗓️ ᴘᴀɢᴇ 1/{round(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="ɴᴇxᴛ ⪼", callback_data=f"next_{req}_{key}_{offset}")]
         )
+    
         
     else:
         btn.append(
             [InlineKeyboardButton(text="🗓️ ᴘᴀɢᴇ 1/1", callback_data="pages")]
-        )
-        btn.insert(0,
-            [InlineKeyboardButton(text="💢 ᴊᴏɪɴ ᴏᴜʀ ɢʀᴏᴜᴘ 💢",url="https://t.me/movie_lookam")]
-        )
-        btn.insert(1,
-          [
-            InlineKeyboardButton(f'🦋  {search}  🦋', 'dupe'),
-            InlineKeyboardButton(f'🗂️ ғɪʟᴇs : {len(files)}', 'dupe')
-          ]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -1569,6 +1589,7 @@ async def auto_filter(client, msg, spoll=False):
         await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
         await msg.message.delete()
+        
 async def advantage_spell_chok(msg):
     query = re.sub(
         r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
@@ -1578,9 +1599,16 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie in that name.")
-        await asyncio.sleep(8)
+        btn = [[
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+        ],[
+            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+        ]]        
+        k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
+        await asyncio.sleep(40)
         await k.delete()
+        await msg.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
     gs = list(filter(regex.match, g_s))
@@ -1607,20 +1635,30 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("⚠️ 𝙸 𝙲𝙾𝚄𝙻𝙳 𝙽𝙾𝚃 𝙵𝙸𝙽𝙳 𝙰𝙽𝚈𝚃𝙷𝙸𝙽𝙶 𝚁𝙴𝙻𝙰𝚃𝙴𝙳 𝚃𝙾 𝚃𝙷𝙰𝚃 . 𝙲𝙷𝙴𝙲𝙺 𝚈𝙾𝚄𝚁 𝚂𝙿𝙴𝙻𝙻𝙸𝙽𝙶 ⚠️")
-        await asyncio.sleep(8)
+        btn = [[
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+        ],[
+            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+        ]]           
+        k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
+        await asyncio.sleep(40)
         await k.delete()
+        await msg.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
     btn = [[
-        InlineKeyboardButton(
-            text=movie.strip(),
-            callback_data=f"spolling#{user}#{k}",
-        )
-    ] for k, movie in enumerate(movielist)]
-    btn.append([InlineKeyboardButton(text="ᴄʟᴏsᴇ ✘", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("<b>⚠︎ 𝙸 𝙲𝙾𝚄𝙻𝙳𝙽'𝚃 𝙵𝙸𝙽𝙳 𝙰𝙽𝚈𝚃𝙷𝙸𝙽𝙶 𝚁𝙴𝙻𝙰𝚃𝙴𝙳 𝚃𝙾 𝚃𝙷𝙰𝚃 ⚠︎\n🔰 𝙳𝙸𝙳 𝚈𝙾𝚄 𝙼𝙴𝙰𝙽 𝙰𝙽𝚈𝚃𝙷𝙸𝙽𝙶 𝙾𝙵 𝚃𝙷𝙴𝚂𝙴 🔰</b>",
-                    reply_markup=InlineKeyboardMarkup(btn))
+        InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+        InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+    ],[
+        InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+    ]]
+    k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
+    await asyncio.sleep(40)
+    await k.delete()
+    await msg.delete()
+    return
+        
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
@@ -1669,4 +1707,3 @@ async def manual_filters(client, message, text=False):
                 break
     else:
         return False
-
