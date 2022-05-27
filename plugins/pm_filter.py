@@ -196,7 +196,7 @@ async def next_page(bot, query):
             InlineKeyboardButton(f'📪 {search} 📪', 'reqst1')
         ]
     )
-    btn.insert(0, 
+    btn.insert(1, 
         [
             InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', 'dupe'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
@@ -1019,7 +1019,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "moviis":  
         await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ⪼ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ⪼ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ⪼ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ʟᴏᴋɪ S01 E01\n\n✘ ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© Tʜᴏᴍᴀs Sʜᴇʟʙʏ", show_alert=True)   
-
+    elif query.data == 'reqst1':
+        await query.answer("Hey Bro 😍\n\n🎯 Click On The Button below The Files You Want  ⬇️", show_alert=True)
+        
     elif query.data == "about":
         buttons = [[
             InlineKeyboardButton("⪻ ʙᴀᴄᴋ", callback_data='start'),
@@ -1502,10 +1504,10 @@ async def auto_filter(client, msg, spoll=False):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'📪 {search} 📪', 'reqst1')
+            InlineKeyboardButton(f'🎪 {search} 🎪', 'reqst1')
         ]
     )
-    btn.insert(0, 
+    btn.insert(1, 
         [
             InlineKeyboardButton(f'ғɪʟᴇs: {total_results}', 'dupe'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
