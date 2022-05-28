@@ -815,7 +815,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🌿 ɢʀᴏᴜᴘ', url='https://t.me/movie_lookam')
             ],[      
             InlineKeyboardButton('⚙️ ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
+            InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about_menu')
             ],[
             InlineKeyboardButton('🔰 ɢᴏ ʙᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴍᴇɴᴜ 🔰', callback_data='samst')
         ]]
@@ -1002,7 +1002,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "me":
         buttons= [[
             InlineKeyboardButton('ᴄᴏɴᴛᴀᴄᴛ', callback_data='owner'),
-            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1034,14 +1034,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == 'reqst1':
         await query.answer("Hey Bro 😍\n\n🎯 Click On The Button below The Files You Want  ⬇️", show_alert=True)
         
-    elif query.data == "about":
+    elif query.data == "about_menu":
         buttons = [[
-            InlineKeyboardButton("⪻ ʙᴀᴄᴋ", callback_data='start'),
-            InlineKeyboardButton('○ ɢʀᴏᴜᴘ', url='https://t.me/movie_lookam'),
-            InlineKeyboardButton('ᴄʟᴏsᴇ ✘', callback_data='close_data')
+        InlineKeyboardButton('ᴅᴋ ʙᴏᴛx', url='https://t.me/CL_UPDATE'),
+        InlineKeyboardButton('ɢʀᴏᴜᴘ', url='https://t.me/movie_lookam'),
+        InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
+        await query.message.delete()
+        await query.message.reply(
             text=script.ABOUT_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html',
