@@ -263,7 +263,8 @@ This module only works for my admins
 • /unban_user  - <code>to unban a user.</code>
 • /channel - <code>to get list of total connected channels</code>
 • /broadcast - <code>to broadcast a message to all users</code>"""
-    STATUS_TXT = """<b>📑 ғɪʟᴇs sᴀᴠᴇᴅ: <code>{}</code>
+    STATUS_TXT = """<b>⍟───[ 🦋 ʙᴏᴛ sᴛᴀᴛᴜs 🦋 ]───⍟\n\n
+📑 ғɪʟᴇs sᴀᴠᴇᴅ: <code>{}</code>
 👩🏻‍💻 ᴜsᴇʀs: <code>{}</code>
 👥 ɢʀᴏᴜᴘs: <code>{}</code>
 🗂️ ᴏᴄᴄᴜᴘɪᴇᴅ: <code>{}</code> MB</b>"""
