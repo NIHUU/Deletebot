@@ -198,7 +198,7 @@ async def next_page(bot, query):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'ғɪʟᴇs: {total_results}', 'reqst1'),
+            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', 'reqst1'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
@@ -502,8 +502,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 msg1 = await query.message.reply(
                 f'<b> ʜᴇʏ 👋 {query.from_user.mention} </b>😍\n\n<b>📫 ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ 📥</b>\n\n'           
                 f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[CL] {title}</code>\n\n'              
-                f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>\n\n'
-                '<b>🔻 ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ғᴏʀ ғɪʟᴇ 🔻</b>',
+                f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>'
                 True,
                 'html',
                 disable_web_page_preview=True,
