@@ -798,7 +798,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
         InlineKeyboardButton('🦋 ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs 🦋', callback_data='start')
     ]]
-        
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(temp.B_NAME),
@@ -829,8 +828,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=reply_markup
             )
         else:
-            await query.message.reply_photo(
-                photo=START_IMAGE_URL,
+            await query.message.reply_video(
+                video=START_IMAGE_URL,
                 caption=script.START_TXT.format(
                     query.from_user.mention , 
                     temp.U_NAME, 
