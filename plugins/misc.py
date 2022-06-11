@@ -168,7 +168,7 @@ async def help(client, message):
             InlineKeyboardButton('ɴᴇxᴛ ⪼', callback_data='eth')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)       
-        await message.reply_text((                     
+        await message.reply_text(            
             text=script.HELP_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
