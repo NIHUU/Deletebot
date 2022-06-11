@@ -1,19 +1,4 @@
-import datetime
 class script(object):
-    
-        m = datetime.datetime.now()
-
-        time = m.hour
-
-        if time < 12:
-            nihaal="Good Morning" 
-        elif time < 15:
-            nihaal="Good Afternoon" 
-        elif time < 20:
-            nihaal="Good Evening"
-        else:
-            nihaal="Good Night"
-            
     START_TXT = f"""<b>☆ {nihaal} ʜᴇʟʟᴏ ᴍʏ ғʀɪᴇɴᴅ {message.from_user.mention} ☆\n\n☆ ᴍʏ ɴᴀᴍᴇ ɪꜱ  <a href=https://t.me/CL_FILTER_BOT><b>『 𝐓ʜᴏᴍᴀs 𝐒ʜᴇʟʙʏ 』</b></a>  ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ᴍᴏᴠɪᴇꜱ ᴊᴜꜱᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ</b>"""
     HELP_TXT = """<b>🚩 ʜᴇʟʟᴏ {} ʙᴜᴅᴅʏ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ʜᴇʟᴘ ᴍᴏᴅᴜʟᴇ 🔖</b>"""
     ABOUT_TXT = """<b>○ ᴍʏ ɴᴀᴍᴇ : <a href=https://t.me/CL_FILTER_BOT><b>𝐓ʜᴏᴍᴀs 𝐒ʜᴇʟʙʏ</b></a>
