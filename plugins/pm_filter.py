@@ -817,26 +817,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         InlineKeyboardButton('🔰 ɢᴏ ʙᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴍᴇɴᴜ 🔰', callback_data='nihu')   
     ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.delete()
-        if not START_IMAGE_URL:
-            await query.message.reply(
-                script.START_TXT.format(
-                    query.from_user.mention, 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
-        else:
-            await query.message.reply_video(
-                video=START_IMAGE_URL,
-                caption=script.START_TXT.format(
-                    query.from_user.mention , 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
+        await query.message.edit_text(
+            text=script.START_TXT.format(temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html',
+        )
         
     elif query.data == "photo":
         buttons = [[
@@ -1056,12 +1041,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         InlineKeyboardButton('⛔️ ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ ᴘᴀɢᴇs ⛔️', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.delete()
-        await query.message.reply(
+        await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html',
-            disable_web_page_preview=True
         )
        
     elif query.data == "restric":
