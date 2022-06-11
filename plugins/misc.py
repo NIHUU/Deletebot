@@ -68,7 +68,7 @@ async def aboutme(client, message):
             InlineKeyboardButton('ᴄʟᴏsᴇ ✘', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_text(
+        await message.reply_photo(
             photo="https://telegra.ph/file/9ef3646c102050116266b.jpg",
             caption=script.OWNER_TXT.format(message.from_user.mention),
             reply_markup=reply_markup,
