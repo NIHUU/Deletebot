@@ -70,7 +70,7 @@ async def aboutme(client, message):
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_text(
             photo="https://telegra.ph/file/9ef3646c102050116266b.jpg",
-            caption=script.OWNER_TXT.format(temp.B_NAME),
+            caption=script.OWNER_TXT.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -169,7 +169,7 @@ async def help(client, message):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)       
         await message.reply_text(            
-            text=script.HELP_TXT.format(query.from_user.mention),
+            text=script.HELP_TXT.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -194,7 +194,7 @@ async def help(client, message):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)       
         await message.reply_text(                     
-            text=script.HELP_TXT.format(query.from_user.mention),
+            text=script.HELP_TXT.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )  
