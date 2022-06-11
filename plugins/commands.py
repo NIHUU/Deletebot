@@ -1,5 +1,4 @@
 import os
-import datetime
 import logging
 import random
 import asyncio
@@ -65,20 +64,6 @@ async def start(client, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
-        
-        m = datetime.datetime.now()
-
-        time = m.hour
-
-        if time < 12:
-            nihaal="Good Morning" 
-        elif time < 15:
-            nihaal="Good Afternoon" 
-        elif time < 20:
-            nihaal="Good Evening"
-        else:
-            nihaal="Good Night"
-            
     if len(message.command) != 2:
         buttons = [[
             InlineKeyboardButton('🦋 ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs 🦋', callback_data='start')
