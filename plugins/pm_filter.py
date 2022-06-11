@@ -214,21 +214,21 @@ async def next_page(bot, query):
             [InlineKeyboardButton("ᴘᴀɢᴇs", callback_data="pages"),
              InlineKeyboardButton(f"{round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages"),
-             InlineKeyboardButton("⪻ ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}")]
+             InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}")]
         )
     elif off_set is None:
         btn.append(
             [
                 InlineKeyboardButton("ᴘᴀɢᴇs", callback_data="pages"),
                 InlineKeyboardButton(f"{round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("ɴᴇxᴛ ⪼", callback_data=f"next_{req}_{key}_{n_offset}")]
+                InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")]
         )
     else:
         btn.append(
             [
-                InlineKeyboardButton("⪻ ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"{round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("ɴᴇxᴛ ⪼", callback_data=f"next_{req}_{key}_{n_offset}")]
+                InlineKeyboardButton("ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{n_offset}")]
         )
 
     try:
@@ -495,7 +495,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ms = await client.send_cached_media(
                     chat_id=CH_FILTER,
                     file_id=file_id,
-                    caption=f'<b>🗂️ ɴᴀᴍᴇ : <a href=https://t.me/movie_lookam>{title}</a></b>\n\n<b>⚙️ sɪᴢᴇ : {size}</b>\n\n⚠️ 𝐓𝐡𝐢𝐬 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐀𝐮𝐭𝐨-𝐃𝐞𝐥𝐞𝐭𝐞𝐝 𝐈𝐧 𝐍𝐞𝐱𝐭 𝟓 𝐌𝐢𝐧𝐮𝐭𝐞𝐬 𝐓𝐨 𝐀𝐯𝐨𝐢𝐝 𝐂𝐨𝐩𝐲𝐫𝐢𝐠𝐡𝐭 𝐈𝐬𝐬𝐮𝐞𝐬.𝐒𝐨 𝐅𝐨𝐫𝐰𝐚𝐫𝐝 𝐓𝐡𝐢𝐬 𝐅𝐢𝐥𝐞 𝐓𝐨 𝐀𝐧𝐲𝐰𝐡𝐞𝐫𝐞 𝐄𝐥𝐬𝐞 𝐁𝐞𝐟𝐨𝐫𝐞 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠.. ⚠️\n\n<b>🧑🏻‍💻 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {query.from_user.mention}\n🚀 ɢʀᴏᴜᴘ : {query.message.chat.title}</b>',
+                    caption=f'<b>ʜᴇʏ 👋 {query.from_user.mention}</b><b>🗂️ ɴᴀᴍᴇ : <a href=https://t.me/movie_lookam>{title}</a></b>\n\n<b>⚙️ sɪᴢᴇ : {size}</b>\n\n<i>⚠️ 𝐓𝐡𝐢𝐬 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐀𝐮𝐭𝐨-𝐃𝐞𝐥𝐞𝐭𝐞𝐝 𝐈𝐧 𝐍𝐞𝐱𝐭 𝟓 𝐌𝐢𝐧𝐮𝐭𝐞𝐬 𝐓𝐨 𝐀𝐯𝐨𝐢𝐝 𝐂𝐨𝐩𝐲𝐫𝐢𝐠𝐡𝐭 𝐈𝐬𝐬𝐮𝐞𝐬.𝐒𝐨 𝐅𝐨𝐫𝐰𝐚𝐫𝐝 𝐓𝐡𝐢𝐬 𝐅𝐢𝐥𝐞 𝐓𝐨 𝐀𝐧𝐲𝐰𝐡𝐞𝐫𝐞 𝐄𝐥𝐬𝐞 𝐁𝐞𝐟𝐨𝐫𝐞 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠.. ⚠️</b>\n\n<b>🧑🏻‍💻 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {query.from_user.mention}\n🚀 ɢʀᴏᴜᴘ : {query.message.chat.title}</b>',
                     reply_markup = InlineKeyboardMarkup(buttons),
                     protect_content=True if ident == "filep" else False 
                 )
@@ -1086,16 +1086,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "try":
         btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={search}'),
-            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text={search}')
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
         ],[
             InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇸", callback_data="mmmm")
         ]] 
         await query.message.edit_text(script.MALAYALMSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))
     elif query.data == "mmmm":
         btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={search}'),
-            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text={search}')
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="try")
         ]] 
@@ -1619,8 +1619,8 @@ async def advantage_spell_chok(msg):
     gs_parsed = []
     if not g_s:
         btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={search}'),
-            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text={search}')
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="try")
         ]]        
@@ -1656,8 +1656,8 @@ async def advantage_spell_chok(msg):
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
         btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={search}'),
-            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text={search}')
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="try")
         ]]           
