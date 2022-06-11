@@ -1,4 +1,3 @@
-from commands import nihaal
 class script(object):
     START_TXT = f"""<b>☆ {nihaal} ʜᴇʟʟᴏ ᴍʏ ғʀɪᴇɴᴅ {message.from_user.mention} ☆\n\n☆ ᴍʏ ɴᴀᴍᴇ ɪꜱ  <a href=https://t.me/CL_FILTER_BOT><b>『 𝐓ʜᴏᴍᴀs 𝐒ʜᴇʟʙʏ 』</b></a>  ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ᴍᴏᴠɪᴇꜱ ᴊᴜꜱᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ</b>"""
     HELP_TXT = """<b>🚩 ʜᴇʟʟᴏ {} ʙᴜᴅᴅʏ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ʜᴇʟᴘ ᴍᴏᴅᴜʟᴇ 🔖</b>"""
