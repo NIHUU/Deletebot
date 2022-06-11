@@ -68,7 +68,7 @@ async def aboutme(client, message):
             InlineKeyboardButton('ᴄʟᴏsᴇ ✘', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.reply_photo(
+        await message.reply_text(
             photo="https://telegra.ph/file/9ef3646c102050116266b.jpg",
             caption=script.OWNER_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
@@ -168,7 +168,7 @@ async def help(client, message):
             InlineKeyboardButton('ɴᴇxᴛ ⪼', callback_data='eth')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)       
-        await query.message.reply_text(                     
+        await message.reply_text((                     
             text=script.HELP_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
@@ -193,7 +193,7 @@ async def help(client, message):
             InlineKeyboardButton('ɴᴇxᴛ ⪼', callback_data='prop')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)       
-        await query.message.reply_text(                     
+        await message.reply_text(                     
             text=script.HELP_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
