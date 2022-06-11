@@ -147,58 +147,8 @@ async def who_is(client, message):
             disable_notification=True
         )
     await status_message.delete()
-
+    
 @Client.on_message(filters.command("help"))
-async def help(client, message):
-        buttons = [[ 
-            InlineKeyboardButton('ɢ-ᴛʀᴀɴs', callback_data='gtrans'),
-            InlineKeyboardButton('ᴜʀʟ-sʜᴏʀᴛɴᴇʀ', callback_data='urlshort'),
-            InlineKeyboardButton('ᴇxᴛʀᴀ', callback_data='extra')
-            ],[
-            InlineKeyboardButton('sᴏɴɢ', callback_data='songs'),
-            InlineKeyboardButton('ᴛᴛs', callback_data='ttss'),
-            InlineKeyboardButton("ᴠɪᴅᴇᴏ", callback_data='video')            
-            ],[
-            InlineKeyboardButton("ɪᴍᴀɢᴇ", callback_data='image'),
-            InlineKeyboardButton('ᴘᴜʀɢᴇ', callback_data='purges'),
-            InlineKeyboardButton('ᴡʜᴏ-ɪs', callback_data='whois')           
-            ],[
-            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats'),
-            InlineKeyboardButton('ɴᴇxᴛ', callback_data='prop')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_text(
-            text=script.HELP_TXT.format(message.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-@Client.on_message(filters.command("eth"))
-async def help(client, message):
-        buttons = [[ 
-            InlineKeyboardButton('ɢ-ᴛʀᴀɴs', callback_data='gtrans'),
-            InlineKeyboardButton('ᴜʀʟ-sʜᴏʀᴛɴᴇʀ', callback_data='urlshort'),
-            InlineKeyboardButton('ᴇxᴛʀᴀ', callback_data='extra')
-            ],[
-            InlineKeyboardButton('sᴏɴɢ', callback_data='songs'),
-            InlineKeyboardButton('ᴛᴛs', callback_data='ttss'),
-            InlineKeyboardButton("ᴠɪᴅᴇᴏ", callback_data='video')            
-            ],[
-            InlineKeyboardButton("ɪᴍᴀɢᴇ", callback_data='image'),
-            InlineKeyboardButton('ᴘᴜʀɢᴇ', callback_data='purges'),
-            InlineKeyboardButton('ᴡʜᴏ-ɪs', callback_data='whois')           
-            ],[
-            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats'),
-            InlineKeyboardButton('ɴᴇxᴛ', callback_data='prop')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_text(
-            text=script.HELP_TXT.format(message.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-@Client.on_message(filters.command("prop"))
 async def help(client, message):
         buttons = [[ 
             InlineKeyboardButton('ɢ-ᴛʀᴀɴs', callback_data='gtrans'),
