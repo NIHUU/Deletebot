@@ -167,8 +167,8 @@ async def help(client, message):
             InlineKeyboardButton('🔮 sᴛᴀᴛᴜs', callback_data='stats'),
             InlineKeyboardButton('ɴᴇxᴛ ⪼', callback_data='eth')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)       
-        await message.reply_text(            
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await message.reply_text(
             text=script.HELP_TXT.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
@@ -192,12 +192,12 @@ async def help(client, message):
             InlineKeyboardButton('🔮 sᴛᴀᴛᴜs', callback_data='stats'),
             InlineKeyboardButton('ɴᴇxᴛ ⪼', callback_data='prop')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)       
-        await message.reply_text(                     
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await message.reply_text(
             text=script.HELP_TXT.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
-        )  
+        )
 @Client.on_message(filters.command("prop"))
 async def help(client, message):
         buttons = [[ 
