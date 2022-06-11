@@ -71,13 +71,13 @@ async def start(client, message):
         time = m.hour
 
         if time < 12:
-            get="Good Morning" 
+            nihaal="Good Morning" 
         elif time < 15:
-            get="Good Afternoon" 
+            nihaal="Good Afternoon" 
         elif time < 20:
-            get="Good Evening"
+            nihaal="Good Evening"
         else:
-            get="Good Night"
+            nihaal="Good Night"
             
     if len(message.command) != 2:
         buttons = [[
