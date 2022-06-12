@@ -26,8 +26,8 @@ async def start(client, message):
         buttons = [[
         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/CL_FILTER_BOT?startgroup=true') ] ,
       [
-        InlineKeyboardButton('ɢʀᴏᴜᴘ', url="https://t.me/movie_lookam'),
-        InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ', url="https://t.me/CL_UPDATE')
+        InlineKeyboardButton('ɢʀᴏᴜᴘ', url="https://t.me/movie_lookam"),
+        InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ', url="https://t.me/CL_UPDATE")
     ]]
        
         reply_markup = InlineKeyboardMarkup(buttons)
