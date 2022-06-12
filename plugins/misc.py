@@ -69,7 +69,7 @@ async def aboutme(client, message):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
-            photo="https://telegra.ph/file/9ef3646c102050116266b.jpg",
+            photo="https://telegra.ph/file/3b96df70fce5cbfb49328.jpg",
             caption=script.OWNER_TXT.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
