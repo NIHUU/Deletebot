@@ -1,5 +1,5 @@
 class script(object):
-    START_TXT = """<b><i>ʜᴇʏ 👋  {}  ʙᴜᴅᴅʏ 💝
+    START_TXT = """<b><i>ʜᴇʏ 👋  {}  ʙᴜᴅᴅʏ 💝\n
 ᴍʏ ɴᴀᴍᴇ ɪꜱ  <a href=https://t.me/CL_FILTER_BOT><b>『 𝐓ʜᴏᴍᴀs 𝐒ʜᴇʟʙʏ 』</b></a>  ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ᴍᴏᴠɪᴇꜱ ᴊᴜꜱᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 💗</b></i>"""
     HELP_TXT = """<b>🚩 ʜᴇʟʟᴏ {} ʙᴜᴅᴅʏ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ʜᴇʟᴘ ᴍᴏᴅᴜʟᴇ 💝</b>"""
     ABOUT_TXT = """<b>🤖 ᴍʏ ɴᴀᴍᴇ : <a href=https://t.me/CL_FILTER_BOT><b>𝐓ʜᴏᴍᴀs 𝐒ʜᴇʟʙʏ</b></a>\n
