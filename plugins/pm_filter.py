@@ -1020,7 +1020,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.OWNER_TXT.format(temp.B_NAME),
+            text=script.OWNER_TXT.format{query.from_user.mention},
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -1610,7 +1610,7 @@ async def advantage_spell_chok(msg):
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="try")
         ]]        
         k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
-        await asyncio.sleep(40)
+        await asyncio.sleep(50)
         await k.delete()
         await msg.delete()
         return
@@ -1647,7 +1647,7 @@ async def advantage_spell_chok(msg):
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="try")
         ]]           
         k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
-        await asyncio.sleep(40)
+        await asyncio.sleep(50)
         await k.delete()
         await msg.delete()
         return
@@ -1660,7 +1660,7 @@ async def advantage_spell_chok(msg):
         InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="try")
     ]]
     k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
-    await asyncio.sleep(40)
+    await asyncio.sleep(50)
     await k.delete()
     await msg.delete()
     return
