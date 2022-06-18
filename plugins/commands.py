@@ -69,18 +69,18 @@ async def start(client, message):
         
     if len(message.command) != 2:
         
-    m = datetime.datetime.now()
+        m = datetime.datetime.now()
 
-    Time = m.hour
+        Time = m.hour
         
-    if Time < 12:
-        nihaal="Good Morning" 
-    elif Time < 15:
-        nihaal="Good Afternoon" 
-    elif Time < 20:
-        nihaal="Good Evening"
-    else:
-        nihaal="Good Night"
+        if Time < 12:
+            nihaal="Good Morning" 
+        elif Time < 15:
+            nihaal="Good Afternoon" 
+        elif Time < 20:
+            nihaal="Good Evening"
+        else:
+            nihaal="Good Night"
         
         START_TXT = f"""
 {nihaal} {message.from_user.mention}
@@ -122,18 +122,18 @@ async def start(client, message):
         return
     if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         
-    m = datetime.datetime.now()
+        m = datetime.datetime.now()
 
-    Time = m.hour
+        Time = m.hour
         
-    if Time < 12:
-        nihaal="Good Morning" 
-    elif Time < 15:
-        nihaal="Good Afternoon" 
-    elif Time < 20:
-        nihaal="Good Evening"
-    else:
-        nihaal="Good Night"
+        if Time < 12:
+            nihaal="Good Morning" 
+        elif Time < 15:
+            nihaal="Good Afternoon" 
+        elif Time < 20:
+            nihaal="Good Evening"
+        else:
+            nihaal="Good Night"
         
         START_TXT = f"""
 {nihaal} {message.from_user.mention}
