@@ -18,7 +18,9 @@ import base64
 logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
-START_TXT="{nihaal} {}"
+START_TXT = f"""
+{nihaal} {message.from_user.mention}
+"""
 
 
 @Client.on_message(filters.command("start"))
