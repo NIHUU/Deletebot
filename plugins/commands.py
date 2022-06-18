@@ -17,6 +17,10 @@ import base64
 logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
+START_TXT=f"""
+{nihaal} {}
+"""
+
 
 @Client.on_message(filters.command("start"))
 async def start(client, message):
@@ -45,7 +49,7 @@ async def start(client, message):
         else:
             await message.reply_video(
                 video=START_IMAGE_URL,
-                caption=script.START_TXT.format(
+                caption=START_TXT.format(
                     (message.from_user.mention if 
                     message.from_user else 
                     message.chat.title), 
@@ -64,6 +68,7 @@ async def start(client, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
+        
     if len(message.command) != 2:
         buttons = [[
             InlineKeyboardButton('✨ ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs ✨', callback_data='start')
@@ -71,7 +76,7 @@ async def start(client, message):
         reply_markup = InlineKeyboardMarkup(buttons)        
         await message.reply_video(
             video=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            caption=START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -107,7 +112,7 @@ async def start(client, message):
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_video(
             video=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            caption=START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
         )
