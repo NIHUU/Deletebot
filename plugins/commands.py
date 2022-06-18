@@ -70,7 +70,7 @@ async def start(client, message):
         
     if len(message.command) != 2:
         
-        m = datetime.datetime.now(pytz.timezon("Asia/Kolkata"))
+        m = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
 
         Time = m.hour
         
