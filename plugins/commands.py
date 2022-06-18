@@ -18,9 +18,6 @@ import base64
 logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
-START_TXT = f"""
-{nihaal} {message.from_user.mention}
-"""
 
 
 @Client.on_message(filters.command("start"))
@@ -70,6 +67,8 @@ async def start(client, message):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
         
+    if len(message.command) != 2:
+        
     m = datetime.datetime.now()
 
     Time = m.hour
@@ -83,7 +82,9 @@ async def start(client, message):
     else:
         nihaal="Good Night"
         
-    if len(message.command) != 2:
+        START_TXT = f"""
+{nihaal} {message.from_user.mention}
+"""
         buttons = [[
             InlineKeyboardButton('✨ ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs ✨', callback_data='start')
         ]]         
@@ -120,6 +121,23 @@ async def start(client, message):
             )
         return
     if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
+        
+    m = datetime.datetime.now()
+
+    Time = m.hour
+        
+    if Time < 12:
+        nihaal="Good Morning" 
+    elif Time < 15:
+        nihaal="Good Afternoon" 
+    elif Time < 20:
+        nihaal="Good Evening"
+    else:
+        nihaal="Good Night"
+        
+        START_TXT = f"""
+{nihaal} {message.from_user.mention}
+"""
         buttons = [[
             InlineKeyboardButton('✨ ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs ✨', callback_data='start')
         ]]
