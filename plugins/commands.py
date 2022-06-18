@@ -125,7 +125,7 @@ async def start(client, message):
         return
     if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         
-        m = datetime.datetime.now()
+        m = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
 
         Time = m.hour
         
