@@ -70,16 +70,16 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     m = datetime.datetime.now()
 
-        Time = m.hour
+    Time = m.hour
         
-        if Time < 12:
-            nihaal="Good Morning" 
-        elif Time < 15:
-            nihaal="Good Afternoon" 
-        elif Time < 20:
-            nihaal="Good Evening"
-        else:
-            nihaal="Good Night"
+    if Time < 12:
+        nihaal="Good Morning" 
+    elif Time < 15:
+        nihaal="Good Afternoon" 
+    elif Time < 20:
+        nihaal="Good Evening"
+    else:
+        nihaal="Good Night"
         
     if len(message.command) != 2:
         buttons = [[
