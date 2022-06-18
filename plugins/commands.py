@@ -1,5 +1,6 @@
 import os
 import datetime
+import pytz
 import logging
 import random
 import asyncio
@@ -69,7 +70,7 @@ async def start(client, message):
         
     if len(message.command) != 2:
         
-        m = datetime.datetime.now()
+        m = datetime.datetime.now(pytz.timezon("Asia/Kolkata"))
 
         Time = m.hour
         
