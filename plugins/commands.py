@@ -74,13 +74,13 @@ async def start(client, message):
         Time = m.hour
         
         if Time < 12:
-            nihaal="Good Morning" 
+            nihaal="ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ" 
         elif Time < 15:
-            nihaal="Good Afternoon" 
+            nihaal="ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ" 
         elif Time < 20:
-            nihaal="Good Evening"
+            nihaal="ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ"
         else:
-            nihaal="Good Night"
+            nihaal="ɢᴏᴏᴅ ɴɪɢʜᴛ"
         
         START_TXT = f"""
 {nihaal} {message.from_user.mention}
