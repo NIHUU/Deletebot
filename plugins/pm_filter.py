@@ -1023,8 +1023,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('🔖 ᴀᴜᴛᴏ ғʟɪᴛᴇʀ', callback_data='autofilter')
             ],[
-            InlineKeyboardButton('🏡 ʜᴏᴍᴇ',callback_data='help'),
-            InlineKeyboardButton('⛔ ᴄʟᴏsᴇ',callback_data="close_data")
+            InlineKeyboardButton('🏡 ʜᴏᴍᴇ', callback_data='help'),
+            InlineKeyboardButton('⛔ ᴄʟᴏsᴇ', callback_data="close_data")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
