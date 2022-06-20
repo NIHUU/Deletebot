@@ -32,32 +32,14 @@ async def start(client, message):
         InlineKeyboardButton('ɢʀᴏᴜᴘ', url="https://t.me/movie_lookam"),
         InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ', url="https://t.me/CL_UPDATE")
     ]]
-       
         reply_markup = InlineKeyboardMarkup(buttons)
-        if not START_IMAGE_URL:
-            await message.reply(
-                script.START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
-        else:
-            await message.reply_video(
-                video=START_IMAGE_URL,
-                caption=START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
-        await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
+        await message.reply_video(
+            video=random.choice(PICS),
+            caption=START_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+        await asyncio.sleep(2) # 😢 https://github.com/NIHUU/Deletebot/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
@@ -89,7 +71,7 @@ async def start(client, message):
 ᴍʏ ɴᴀᴍᴇ ɪꜱ  <a href=https://t.me/CL_FILTER_BOT><b>『 𝐓ʜᴏᴍᴀs 𝐒ʜᴇʟʙʏ 』</b></a>  ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ᴍᴏᴠɪᴇꜱ ᴊᴜꜱᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 😈</b></i>
 """
         buttons = [[
-            InlineKeyboardButton('✨ ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs ✨', callback_data='start')
+            InlineKeyboardButton('⚡ ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs ⚡', callback_data='start')
         ]]         
         reply_markup = InlineKeyboardMarkup(buttons)        
         await message.reply_video(
@@ -144,7 +126,7 @@ async def start(client, message):
 ᴍʏ ɴᴀᴍᴇ ɪꜱ  <a href=https://t.me/CL_FILTER_BOT><b>『 𝐓ʜᴏᴍᴀs 𝐒ʜᴇʟʙʏ 』</b></a>  ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ᴍᴏᴠɪᴇꜱ ᴊᴜꜱᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 😈</b></i>
 """
         buttons = [[
-            InlineKeyboardButton('✨ ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs ✨', callback_data='start')
+            InlineKeyboardButton('⚡ ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs ⚡', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_video(
