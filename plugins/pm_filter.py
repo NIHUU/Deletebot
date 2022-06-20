@@ -502,14 +502,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     reply_markup = InlineKeyboardMarkup(buttons),
                     protect_content=True if ident == "filep" else False 
                 )
-                msg1 = await query.message.reply(
-                f'<b> ʜᴇʏ 👋 {query.from_user.mention} </b>😍\n\n<b>📫 ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ 📥</b>\n\n'           
-                f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[CL] {title}</code>\n\n'              
-                f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
-                True,
-                'html',
-                disable_web_page_preview=True,
-                    
+                
                 m = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
 
                 Time = m.hour
@@ -523,6 +516,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 else:
                     nihaal="ɢᴏᴏᴅ ɴɪɢʜᴛ"
                     
+                msg1 = await query.message.reply(
+                f'<b> ʜᴇʏ 👋 {query.from_user.mention} </b>😍\n\n<b>📫 ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ 📥</b>\n\n'           
+                f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[CL] {title}</code>\n\n'              
+                f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
+                True,
+                'html',
+                disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
