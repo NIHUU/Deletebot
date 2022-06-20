@@ -936,7 +936,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴘɪɴ', callback_data='pin')           
             ],[
             InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='eth'),
-            InlineKeyboardButton(text="🔰 sᴛᴀᴛᴜs", callback_data="stats")
+            InlineKeyboardButton(text="🔰 sᴛᴀᴛᴜs", callback_data="stats"),
+            InlineKeyboardButton('🏡 ʜᴏᴍᴇ', callback_data="start")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)       
         await query.message.edit_text(                     
@@ -1069,10 +1070,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "about_menu":
         buttons = [[
         InlineKeyboardButton('📊 sᴛᴀᴛᴜs', callback_data='stats'),
-        InlineKeyboardButton('📚 ʜᴇʟᴘ', callback_data='help'),
-        InlineKeyboardButton('🏡 ʜᴏᴍᴇ', callback_data='start')
+        InlineKeyboardButton('🔖 sᴜᴘᴘᴏʀᴛ', url="https://t.me/NL_BOTxCHAT"),
+        InlineKeyboardButton('🥺 ʜᴇʟᴘ', callback_data='help')
         ],[
-        InlineKeyboardButton('⛔️ ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ ᴘᴀɢᴇs ⛔️', callback_data='close_data')
+        InlineKeyboardButton('🏡 ʜᴏᴍᴇ', callback_data='start')
+        InlineKeyboardButton('⛔️ ᴄʟɪᴄᴋ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
