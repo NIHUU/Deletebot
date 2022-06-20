@@ -509,6 +509,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 True,
                 'html',
                 disable_web_page_preview=True,
+                    
+                m = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
+
+                Time = m.hour
+
+                if Time < 12:
+                    nihaal="ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ" 
+                elif Time < 15:
+                    nihaal="ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ" 
+                elif Time < 20:
+                    nihaal="ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ"
+                else:
+                    nihaal="ɢᴏᴏᴅ ɴɪɢʜᴛ"
+                    
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
