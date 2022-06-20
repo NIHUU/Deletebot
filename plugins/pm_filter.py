@@ -1073,7 +1073,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         InlineKeyboardButton('🔖 sᴜᴘᴘᴏʀᴛ', url="https://t.me/NL_BOTxCHAT"),
         InlineKeyboardButton('🥺 ʜᴇʟᴘ', callback_data='help')
         ],[
-        InlineKeyboardButton('🏡 ʜᴏᴍᴇ', callback_data='start')
+        InlineKeyboardButton('🏡 ʜᴏᴍᴇ', callback_data='start'),
         InlineKeyboardButton('⛔️ ᴄʟɪᴄᴋ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
