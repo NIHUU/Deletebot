@@ -1522,8 +1522,7 @@ async def auto_filter(client, msg, spoll=False):
                         spell = await update.reply_text(text=settings["spelltext"].format(query=search, first_name=update.from_user.first_name, last_name=update.from_user.last_name, title=update.chat.title, mention=update.from_user.mention), disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(buttons))           
                         await asyncio.sleep(60)
                         await spell.delete()
-                else:
-                    return
+                
         else:
             return
     else:
