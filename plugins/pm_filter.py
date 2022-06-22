@@ -1511,7 +1511,7 @@ async def auto_filter(client, msg, spoll=False):
         if message.text.startswith("/"): return  # ignore commands
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
             return
-        if 2 < len(update.text) < 100:    
+        if 2 < len(message.text) < 100:    
             btn = []
             search = update.text
             settings = await get_settings(update.chat.id)
