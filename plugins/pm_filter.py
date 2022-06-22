@@ -1513,16 +1513,22 @@ async def auto_filter(client, msg, spoll=False):
             return
         if 2 < len(message.text) < 100:    
             btn = []
-            search = update.text
-            settings = await get_settings(update.chat.id)
+            search = message.text
+            settings = await get_settings(message.chat.id)
             MOVIE_TEXT = settings["template"]
             files = await get_filter_results(query=search)
             if not files:
                 if settings["spellmode"]:
                     try:
-                        reply = search.replace(" ", '+')  
-                        buttons = [[ InlineKeyboardButton("🔍 𝚂𝙴𝙰𝚁𝙲𝙷 𝚃𝙾 𝙶𝙾𝙾𝙶𝙻𝙴 🔎", url=f"https://www.google.com/search?q={reply}") ],[ InlineKeyboardButton("× 𝙲𝙻𝙾𝚂𝙴 ×", callback_data="close") ]]
-                        spell = await update.reply_text(text=settings["spelltext"].format(query=search, first_name=update.from_user.first_name, last_name=update.from_user.last_name, title=update.chat.title, mention=update.from_user.mention), disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(buttons))           
+                        reply = search.replace(" ", "+")
+                        reply_markup = InlineKeyboardMarkup([[
+                         InlineKeyboardButton("🔮IMDB🔮", url=f"https://imdb.com/find?q={reply}"),
+                         InlineKeyboardButton("🪐 Reason", callback_data="reason")
+                         ]]
+                        )    
+                        imdb=await get_poster(search)
+                        if imdb and imdb.get('poster'):
+                            await message.reply_photo(photo=imdb.get('poster'), caption=script.IMDB_MOVIE_2.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), url=imdb['url'], short=imdb['short_info']), reply_markup=reply_markup) 
                         await asyncio.sleep(60)
                         await spell.delete()
                     except:
