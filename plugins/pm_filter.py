@@ -1518,7 +1518,7 @@ async def auto_filter(client, msg, spoll=False):
             MOVIE_TEXT = settings["template"]
             files = await get_filter_results(query=search)
             if not files:
-                if settings["spellmode"]:
+                if settings["spell_check"]:
                     try:
                         reply = search.replace(" ", "+")
                         reply_markup = InlineKeyboardMarkup([[
