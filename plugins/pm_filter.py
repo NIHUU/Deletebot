@@ -1511,29 +1511,16 @@ async def auto_filter(client, msg, spoll=False):
         if message.text.startswith("/"): return  # ignore commands
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
             return
-        if 2 < len(message.text) < 100:    
-            btn = []
+        if 2 < len(message.text) < 100:
             search = message.text
-            settings = await get_settings(message.chat.id)
-            MOVIE_TEXT = settings["template"]
-            files = await get_filter_results(query=search)
+            files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
                 if settings["spell_check"]:
-                    try:
-                        reply = search.replace(" ", "+")
-                        reply_markup = InlineKeyboardMarkup([[
-                         InlineKeyboardButton("🔮IMDB🔮", url=f"https://imdb.com/find?q={reply}"),
-                         InlineKeyboardButton("🪐 Reason", callback_data="reason")
-                         ]]
-                        )    
-                        imdb=await get_poster(search)
-                        if imdb and imdb.get('poster'):
-                            await message.reply_photo(photo=imdb.get('poster'), caption=script.IMDB_MOVIE_2.format(mention=message.from_user.mention, query=search, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), url=imdb['url'], short=imdb['short_info']), reply_markup=reply_markup) 
-                        await asyncio.sleep(60)
-                        await spell.delete()
-                    except:
-                        pass
-                return
+                    return await advantage_spell_chok(msg)
+                else:
+                    return
+        else:
+            return
     else:
         settings = await get_settings(msg.message.chat.id)
         message = msg.message.reply_to_message  # msg will be callback query
@@ -1570,7 +1557,7 @@ async def auto_filter(client, msg, spoll=False):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', 'reqst1'),
+            InlineKeyboardButton(f'ғɪʟᴇs: {total_results}', 'reqst1'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
