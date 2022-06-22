@@ -1570,7 +1570,7 @@ async def auto_filter(client, msg, spoll=False):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'ғɪʟᴇs: {total_results}', 'reqst1'),
+            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', 'reqst1'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
