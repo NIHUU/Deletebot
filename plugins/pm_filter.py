@@ -878,7 +878,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('ғɪʟᴛᴇʀs', callback_data='filters'),
-            InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats'),
+            InlineKeyboardButton('ɢ ᴛʀᴀɴs', callback_data='gtrans'),
             InlineKeyboardButton('ᴄᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='coct')
             ],[
             InlineKeyboardButton('ᴛᴇʟᴇɢʀᴀᴘʜ', callback_data='tele'),
@@ -889,8 +889,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴀᴜᴅɪᴏ ʙᴏᴏᴋ', callback_data='abook'),
             InlineKeyboardButton('ʀᴇᴘᴏʀᴛ', callback_data='report')
             ],[
-            InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='start'),
-            InlineKeyboardButton('ɴᴇxᴛ ➡️', callback_data='eth')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start'),
+            InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats'),
+            InlineKeyboardButton('ɴᴇxᴛ', callback_data='eth')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)       
         await query.message.edit_text(                     
@@ -900,7 +901,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "eth":
         buttons = [[ 
-            InlineKeyboardButton('ɢ ᴛʀᴀɴs', callback_data='gtrans'),
+            InlineKeyboardButton('ᴄᴀʀʙᴏɴ', callback_data='carbon'),
             InlineKeyboardButton('ᴜʀʟ sʜᴏʀᴛɴᴇʀ', callback_data='urlshort'),
             InlineKeyboardButton('ᴇxᴛʀᴀ', callback_data='extra')
             ],[
@@ -912,8 +913,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴘᴜʀɢᴇ', callback_data='purges'),
             InlineKeyboardButton('ᴡʜᴏ ɪs', callback_data='whois')           
             ],[
-            InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('ɴᴇxᴛ ➡️', callback_data='prop')
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats'),
+            InlineKeyboardButton('ɴᴇxᴛ', callback_data='prop')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)       
         await query.message.edit_text(                     
@@ -935,9 +937,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ғᴏɴᴛ', callback_data='fond'),
             InlineKeyboardButton('ᴘɪɴ', callback_data='pin')           
             ],[
-            InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='eth'),
-            InlineKeyboardButton(text="🔰 sᴛᴀᴛᴜs", callback_data="stats"),
-            InlineKeyboardButton('🏡 ʜᴏᴍᴇ', callback_data="start")
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='eth'),
+            InlineKeyboardButton(text="sᴛᴀᴛᴜs", callback_data="stats"),
+            InlineKeyboardButton('ʜᴏᴍᴇ', callback_data="start")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)       
         await query.message.edit_text(                     
@@ -1043,7 +1045,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    
+    elif query.data =="carbon"
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close_data')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.CARBON_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+        
     elif query.data == "owner":
         buttons = [[       
             InlineKeyboardButton('🔰 ɪɴsᴛᴀɢʀᴀᴍ 🔰', url='https://instagram.com/__nihaal_efx__?igshid=YmMyMTA2M2Y='),
