@@ -305,6 +305,8 @@ This module only works for my admins
 
 ➛𝖤𝗑𝖺𝗆𝗉𝗅𝖾:
 <code>/covid 𝖨𝗇𝖽𝗂𝖺</code>"""
+    
+    CARBON_TXT = """Reply To a Message To Make CarBon use /carbon for using this Module"""
 
     URLSHORT_TXT = """➤ 𝐇𝐞𝐥𝐩: 𝖴𝗋𝗅 𝗌𝗁𝗈𝗋𝗍𝗇𝖾𝗋
 
