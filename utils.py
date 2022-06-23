@@ -375,3 +375,7 @@ def humanbytes(size):
         size /= power
         n += 1
     return str(round(size, 2)) + " " + Dic_powerN[n] + 'B'
+
+def split_list(l, n):
+    for i in range(0, len(l), n):
+        yield l[i:i + n]
