@@ -51,3 +51,4 @@ Pillow
 ujson
 pytz
 datetime
+speedtest
