@@ -5,7 +5,7 @@ from plugins.CrazyBoss.function import make_carbon
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 aiohttpsession = ClientSession()
 
-C = f"ʜᴇʏ 👋 {query.from_user.mention} ʏᴏᴜʀ ᴄᴀʀʙᴏɴ ɪs ʀᴇᴀᴅʏ 🤤"
+C = f"ʜᴇʏ 👋 {} ʏᴏᴜʀ ᴄᴀʀʙᴏɴ ɪs ʀᴇᴀᴅʏ 🤤"
 F = InlineKeyboardMarkup(
 [[
      InlineKeyboardButton("🔖 sᴜᴘᴘᴏʀᴛ 🕊️", url="https://t.me/NL_BOTxCHAT")
@@ -31,7 +31,7 @@ async def carbon_func(_, message):
     await m.edit("ᴜᴘʟᴏᴀᴅɪɴɢ..")
     await message.reply_photo(
         photo=carbon,
-        caption=C,
+        caption=C.format(message.from_user.mention),
         reply_markup=F)
     await m.delete()
     carbon.close()
