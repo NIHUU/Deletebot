@@ -52,6 +52,10 @@ async def start(client, message):
         
     if len(message.command) != 2:
         
+        await message.reply_photo(
+            photo=random.choice(PICS),
+        )
+        
         m = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
 
         Time = m.hour
@@ -74,9 +78,8 @@ async def start(client, message):
             InlineKeyboardButton('ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs', callback_data='start')
         ]]         
         reply_markup = InlineKeyboardMarkup(buttons)        
-        await message.reply_video(
-            video=random.choice(PICS),
-            caption=START_TXT,
+        await message.reply_text(
+            text=START_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -107,6 +110,10 @@ async def start(client, message):
         return
     if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         
+        await message.reply_photo(
+            photo=random.choice(PICS),
+        )
+        
         m = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
 
         Time = m.hour
@@ -127,11 +134,10 @@ async def start(client, message):
 """
         buttons = [[
             InlineKeyboardButton('ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs', callback_data='start')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_video(
-            video=random.choice(PICS),
-            caption=START_TXT,
+        ]]         
+        reply_markup = InlineKeyboardMarkup(buttons)        
+        await message.reply_text(
+            text=START_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
