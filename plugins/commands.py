@@ -143,7 +143,7 @@ async def start(client, message):
         file_id = data
         pre = ""
     if data.split("-", 1)[0] == "BATCH":
-        sts = await message.reply("<b>𝙰𝙲𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝙵𝙸𝙻𝙴𝚂.../</b>")
+        sts = await message.reply("<b>ᴀᴄᴄᴇssɪɴɢ...</b>")
         file_id = data.split("-", 1)[1]
         msgs = BATCH_FILES.get(file_id)
         if not msgs:
@@ -166,6 +166,7 @@ async def start(client, message):
                 except Exception as e:
                     logger.exception(e)
                     f_caption=f_caption
+                    
             if f_caption is None:
                 f_caption = f"{title}"
             try:
@@ -248,7 +249,7 @@ async def start(client, message):
             file = getattr(msg, filetype)
             title = file.file_name
             size=get_size(file.file_size)
-            f_caption = f"<code>{title}</code>"
+            f_caption = f"<code>[CL]{title}</code>"
             if CUSTOM_FILE_CAPTION:
                 try:
                     f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='')
