@@ -29,13 +29,13 @@ async def start(client, message):
         buttons = [[
         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/CL_FILTER_BOT?startgroup=true') ] ,
       [
-        InlineKeyboardButton('ɢʀᴏᴜᴘ', url="https://t.me/movie_lookam"),
-        InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ', url="https://t.me/CL_UPDATE")
+        InlineKeyboardButton('🕊️ ɢʀᴏᴜᴘ', url="https://t.me/movie_lookam"),
+        InlineKeyboardButton('💿 ᴄʜᴀɴɴᴇʟ', url="https://t.me/CL_UPDATE")
     ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_video(
             video=random.choice(PICS),
-            caption=START_TXT,
+            text=START_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -43,8 +43,8 @@ async def start(client, message):
         
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
-            await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.mention, total, "Unknown"))       
-            await db.add_chat(message.chat.title, message.chat.title)
+            await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.username, total, "Unknown"))       
+            await db.add_chat(message.chat.id, message.chat.username)
         return 
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
@@ -66,12 +66,12 @@ async def start(client, message):
             nihaal="ɢᴏᴏᴅ ɴɪɢʜᴛ"
         
         START_TXT = f"""
-<b><i>{nihaal} {message.from_user.mention}  ʙᴜᴅᴅʏ 💝
+<b>{nihaal} {message.from_user.mention}  ʙᴜᴅᴅʏ
 
-ᴍʏ ɴᴀᴍᴇ ɪꜱ  <a href=https://t.me/CL_FILTER_BOT><b>『 𝐓ʜᴏᴍᴀs 𝐒ʜᴇʟʙʏ 』</b></a>  ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ᴍᴏᴠɪᴇꜱ ᴊᴜꜱᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 😈</b></i>
+ᴍʏ ɴᴀᴍᴇ ɪꜱ  <a href=https://t.me/CL_FILTER_BOT><b>『 𝐓ʜᴏᴍᴀs 𝐒ʜᴇʟʙʏ 』</b></a>  ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ᴍᴏᴠɪᴇꜱ ᴊᴜꜱᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 😈</b>
 """
         buttons = [[
-            InlineKeyboardButton('⚡ ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs ⚡', callback_data='start')
+            InlineKeyboardButton('ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs', callback_data='start')
         ]]         
         reply_markup = InlineKeyboardMarkup(buttons)        
         await message.reply_video(
@@ -90,13 +90,13 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "💢 ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 💢", url=invite_link.invite_link
+                    "ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite_link.invite_link
                 )
             ]
         ]
 
         if message.command[1] != "subscribe":
-            btn.append([InlineKeyboardButton("🔃 ᴛʀʏ ᴀɢᴀɪɴ 🔃", callback_data=f"checksub#{message.command[1]}")])
+            btn.append([InlineKeyboardButton("ᴛʀʏ ᴀɢᴀɪɴ", callback_data=f"checksub#{message.command[1]}")])
         await client.send_photo(
             photo="https://telegra.ph/file/f5d411fba25ecfa5197fe.jpg",
             chat_id=message.from_user.id,
@@ -121,12 +121,12 @@ async def start(client, message):
             nihaal="ɢᴏᴏᴅ ɴɪɢʜᴛ"
         
         START_TXT = f"""
-<b><i>{nihaal} {message.from_user.mention}  ʙᴜᴅᴅʏ 💝
+<b>{nihaal} {message.from_user.mention}  ʙᴜᴅᴅʏ
 
-ᴍʏ ɴᴀᴍᴇ ɪꜱ  <a href=https://t.me/CL_FILTER_BOT><b>『 𝐓ʜᴏᴍᴀs 𝐒ʜᴇʟʙʏ 』</b></a>  ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ᴍᴏᴠɪᴇꜱ ᴊᴜꜱᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 😈</b></i>
+ᴍʏ ɴᴀᴍᴇ ɪꜱ  <a href=https://t.me/CL_FILTER_BOT><b>『 𝐓ʜᴏᴍᴀs 𝐒ʜᴇʟʙʏ 』</b></a>  ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ᴍᴏᴠɪᴇꜱ ᴊᴜꜱᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 😈</b>
 """
         buttons = [[
-            InlineKeyboardButton('⚡ ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs ⚡', callback_data='start')
+            InlineKeyboardButton('ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴs', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_video(
