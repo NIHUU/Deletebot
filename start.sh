@@ -1,12 +1,12 @@
 if [ -z $UPSTREAM_REPO ]
 then
   echo "Cloning main Repository"
-  git clone https://github.com/BLACK-DEVILBOY/BLACKCATROBOT /BLACKCATROBOT
+  git clone https://github.com/NIHUU/Deletebot /Deletebot
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
-  git clone $UPSTREAM_REPO /BLACKCATROBOT
+  git clone $UPSTREAM_REPO /Deletebot
 fi
-cd /BLACKCATROBOT
+cd /Deletebot
 pip3 install -U -r requirements.txt
 echo "Starting thomas shelby....🔥"
 python3 bot.py
