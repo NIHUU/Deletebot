@@ -1169,6 +1169,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         await query.message.edit_text(
             text=script.MAL_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
         )
         
     elif query.data == "tml":
@@ -1177,6 +1179,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         await query.message.edit_text(
             text=script.TML_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
         )
         
     elif query.data == "eng":
@@ -1185,6 +1189,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         await query.message.edit_text(
             text=script.ENG_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
         )
     elif query.data == "hnd":
         buttons = [[
@@ -1192,6 +1198,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         await query.message.edit_text(
             text=script.HND_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
         )
     elif query.data == "corona":
         buttons= [[
