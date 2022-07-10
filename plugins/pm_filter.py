@@ -1143,15 +1143,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ʜɴᴅ', callback_data='hnd')
         ]]
         await query.message.edit_text(script.SPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))
-    elif query.data == "mmmm":
-        btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
-            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
-        ],[
-            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="try")
-        ]] 
-        await query.message.edit_text(script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))
-        
+    
     elif query.data == "whois":
         buttons= [[
             InlineKeyboardButton(' ʙᴀᴄᴋ', callback_data='help'),
@@ -1164,7 +1156,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "mal":
-        buttons= [[
+        buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1175,7 +1167,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         
     elif query.data == "tml":
-        buttons= [[
+        buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1186,7 +1178,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         
     elif query.data == "eng":
-        buttons= [[
+        buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1197,7 +1189,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "hnd":
         buttons = [[
-            InlineKeyboardButton('ɢᴏᴏɢʟᴇ', url=f'https://google.com/search?q={message}'),
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
