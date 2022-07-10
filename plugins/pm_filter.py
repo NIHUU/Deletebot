@@ -1135,8 +1135,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "try":
         btn = [[
+            InlineKeyboardButton('ɪɴsᴛʀᴜᴄᴛɪᴏɴ', dupe)
+        ],[
             InlineKeyboardButton('ᴍᴀʟ', callback_data='mal'),
-            InlineKeyboardButton('ᴛᴍʟ', callback_data='tml'),
+            InlineKeyboardButton('ᴛᴀᴍ', callback_data='tml'),
             InlineKeyboardButton('ᴇɴɢ', callback_data='eng'),
             InlineKeyboardButton('ʜɴᴅ', callback_data='hnd')
         ]]
@@ -1165,7 +1167,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
-        await query.message.reply_text(
+        await query.message.edit_text(
             text=script.MAL_TXT,
         )
         
@@ -1173,7 +1175,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
-        await query.message.reply_text(
+        await query.message.edit_text(
             text=script.TML_TXT,
         )
         
@@ -1181,14 +1183,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
-        await query.message.reply_text(
+        await query.message.edit_text(
             text=script.ENG_TXT,
         )
     elif query.data == "hnd":
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
-        await query.message.reply_text(
+        await query.message.edit_text(
             text=script.HND_TXT,
         )
     elif query.data == "corona":
