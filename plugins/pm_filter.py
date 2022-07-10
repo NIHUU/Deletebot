@@ -1167,6 +1167,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons= [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.MAL_TXT,
             reply_markup=reply_markup,
@@ -1177,6 +1178,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons= [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.TML_TXT,
             reply_markup=reply_markup,
@@ -1187,6 +1189,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons= [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.ENG_TXT,
             reply_markup=reply_markup,
