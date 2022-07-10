@@ -1755,7 +1755,7 @@ async def advantage_spell_chok(msg):
     if not movielist:
         btn = [[
             InlineKeyboardButton('ɪɴsᴛʀᴜᴄᴛɪᴏɴ', callback_data='try'),
-            InlineKeyboardButton('ɢᴏᴏɢʟᴇ', url=f'https://google.com/search?q=')
+            InlineKeyboardButton('ɢᴏᴏɢʟᴇ', url=f'https://google.com/search?q={message.text.replace(" ", "+")}')
         ]]        
         k=await msg.reply_text(text=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
         await asyncio.sleep(40)
