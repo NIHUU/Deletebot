@@ -1161,6 +1161,30 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+    elif query.data == "mal":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
+        ]]
+        await query.message.reply_text(
+            text=script.MAL_TXT,
+        )
+        
+    elif query.data == "tml":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
+        ]]
+        await query.message.reply_text(
+            text=script.MAL_TXT,
+        )
+        
+    elif query.data == "mal":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
+        ]]
+        await query.message.reply_text(
+            text=script.MAL_TXT,
+        )
+        
     elif query.data == "corona":
         buttons= [[
             InlineKeyboardButton(' ʙᴀᴄᴋ', callback_data='help'),
