@@ -1164,7 +1164,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "mal":
-        buttons = [[
+        buttons= [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
         await query.message.edit_text(
@@ -1172,7 +1172,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         
     elif query.data == "tml":
-        buttons = [[
+        buttons= [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
         await query.message.edit_text(
@@ -1180,7 +1180,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         
     elif query.data == "eng":
-        buttons = [[
+        buttons= [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
         await query.message.edit_text(
