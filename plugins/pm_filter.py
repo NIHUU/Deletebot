@@ -1197,8 +1197,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "hnd":
         buttons = [[
+            InlineKeyboardButton('ɢᴏᴏɢʟᴇ', url=f'https://google.com/search?q={message}'),
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.HND_TXT,
             reply_markup=reply_markup,
