@@ -1139,7 +1139,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴛᴍʟ', callback_data='tml'),
             InlineKeyboardButton('ᴇɴɢ', callback_data='eng'),
             InlineKeyboardButton('ʜɴᴅ', callback_data='hnd')
-            
+        ]]
         await query.message.edit_text(script.SPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))
     elif query.data == "mmmm":
         btn = [[
