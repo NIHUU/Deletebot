@@ -1687,7 +1687,7 @@ async def advantage_spell_chok(msg):
             InlineKeyboardButton('ɪɴsᴛʀᴜᴄᴛɪᴏɴ', callback_data='try'),
             InlineKeyboardButton('ɢᴏᴏɢʟᴇ', url=f'https://google.com/search?q=')
         ]]        
-        k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
+        k=await msg.reply_text(text=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
         await asyncio.sleep(40)
         await k.delete()
         await msg.delete()
@@ -1721,7 +1721,7 @@ async def advantage_spell_chok(msg):
             InlineKeyboardButton('ɪɴsᴛʀᴜᴄᴛɪᴏɴ', callback_data='try'),
             InlineKeyboardButton('ɢᴏᴏɢʟᴇ', url=f'https://google.com/search?q=')
         ]]        
-        k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
+        k=await msg.reply_text(text=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
         await asyncio.sleep(40)
         await k.delete()
         await msg.delete()
@@ -1732,7 +1732,7 @@ async def advantage_spell_chok(msg):
         InlineKeyboardButton('ɪɴsᴛʀᴜᴄᴛɪᴏɴ', callback_data='try'),
         InlineKeyboardButton('ɢᴏᴏɢʟᴇ', url=f'https://google.com/search?q=')
     ]]        
-    k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
+    k=await msg.reply_text(text=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
     await asyncio.sleep(40)
     await k.delete()
     await msg.delete()
