@@ -1174,17 +1174,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
         await query.message.reply_text(
-            text=script.MAL_TXT,
+            text=script.TML_TXT,
         )
         
-    elif query.data == "mal":
+    elif query.data == "eng":
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
         ]]
         await query.message.reply_text(
-            text=script.MAL_TXT,
+            text=script.ENG_TXT,
         )
-        
+    elif query.data == "hnd":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='try')
+        ]]
+        await query.message.reply_text(
+            text=script.HND_TXT,
+        )
     elif query.data == "corona":
         buttons= [[
             InlineKeyboardButton(' ʙᴀᴄᴋ', callback_data='help'),
