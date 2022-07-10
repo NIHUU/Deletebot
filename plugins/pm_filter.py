@@ -1135,7 +1135,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "try":
         btn = [[
-            InlineKeyboardButton('ɪɴsᴛʀᴜᴄᴛɪᴏɴ', dupe)
+            InlineKeyboardButton('ɪɴsᴛʀᴜᴄᴛɪᴏɴ', 'dupe')
         ],[
             InlineKeyboardButton('ᴍᴀʟ', callback_data='mal'),
             InlineKeyboardButton('ᴛᴀᴍ', callback_data='tml'),
