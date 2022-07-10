@@ -1729,7 +1729,7 @@ async def advantage_spell_chok(msg):
 
     SPELL_CHECK[msg.message_id] = movielist
     btn = [[
-        InlineKeyboardButton('ɪɴsᴛʀᴜᴄᴛɪᴏɴ', callback_data='try''),
+        InlineKeyboardButton('ɪɴsᴛʀᴜᴄᴛɪᴏɴ', callback_data='try'),
         InlineKeyboardButton('ɢᴏᴏɢʟᴇ', url=f'https://google.com/search?q=')
     ]]        
     k=await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
