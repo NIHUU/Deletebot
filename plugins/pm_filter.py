@@ -539,7 +539,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         title = files.file_name
         size = get_size(files.file_size)
         f_caption = files.caption
-        await client.send_cached_media(chat_id=CH_FILTER,file_id=file_id)
         if CUSTOM_FILE_CAPTION:
             try:
                 f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
@@ -1135,6 +1134,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "try":
+        m = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
+
+        Time = m.hour
+        
+        if Time < 12:
+            nihaal="ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ" 
+        elif Time < 15:
+            nihaal="ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ" 
+        elif Time < 20:
+            nihaal="ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ"
+        else:
+            nihaal="ɢᴏᴏᴅ ɴɪɢʜᴛ"
+          
+        SPELL_TXT = f"""
+{nibaal} {query.from_user.mention} ᴄʜᴏᴏsᴇ ᴀ ʟᴀɴɢʏᴀɢᴇ ʙʀᴏ
+"""
+            
         btn = [[
             InlineKeyboardButton('ɪɴsᴛʀᴜᴄᴛɪᴏɴ', 'dupe')
         ],[
@@ -1143,7 +1159,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴇɴɢ', callback_data='eng'),
             InlineKeyboardButton('ʜɴᴅ', callback_data='hnd')
         ]]
-        await query.message.edit_text(script.SPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))
+        await query.message.edit_text(SPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))
     
     elif query.data == "whois":
         buttons= [[
