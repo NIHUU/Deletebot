@@ -1148,7 +1148,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             nihaal="ɢᴏᴏᴅ ɴɪɢʜᴛ"
           
         SPELL_TXT = f"""
-{nihaal} {query.from_user.mention} ᴄʜᴏᴏsᴇ ᴀ ʟᴀɴɢʏᴀɢᴇ ʙʀᴏ
+{nihaal} {query.from_user.mention} ᴄʜᴏᴏsᴇ ᴀ ʟᴀɴɢᴜᴀɢᴇ ʙʀᴏ
 """
             
         btn = [[
