@@ -430,7 +430,7 @@ To Get Sticker ID
 • 𝗆𝗅 = 𝖬𝖺𝗅𝖺𝗒𝖺𝗅𝖺𝗆
 • 𝗁𝗂 = 𝖧𝗂𝗇𝖽𝗂"""
     
-    IMDB_TXT = "<b>〓〓〓 <a href={url}>{title}</a> 〓〓〓\n\n⭐️ ɪᴍᴅʙ  {rating} | ⏰ ʀᴜɴ {runtime} ᴍɪɴ |\n📆 ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ : {release_date}</b>\n\n● <code>{genres}</code>\n● <code>languages</code>\n\n📖 <b>ꜱᴛᴏʀʏ</b> : {plot}\n\n<b><i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ <a href='https://t.me/CL_FILTER_BOT'>ᴛʜᴏᴍᴀs sʜᴇʟʙʏ</a></i></b></a>"
+    IMDB_TXT = f"<b>〓〓〓 <a href={url}>{title}</a> 〓〓〓\n\n⭐️ ɪᴍᴅʙ  {rating} | ⏰ ʀᴜɴ {runtime} ᴍɪɴ |\n📆 ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ : {release_date}</b>\n\n● <code>{genres}</code>\n● <code>languages</code>\n\n📖 <b>ꜱᴛᴏʀʏ</b> : {plot}\n\n<b><i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ <a href='https://t.me/CL_FILTER_BOT'>ᴛʜᴏᴍᴀs sʜᴇʟʙʏ</a></i></b></a>"
 
     RESTRIC_TXT = """➤ 𝐇𝐞𝐥𝐩: Mᴜᴛᴇ 🚫
 
