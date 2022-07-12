@@ -195,12 +195,12 @@ async def next_page(bot, query):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'🧿 {search} 🧿', 'movieimdb')
+            InlineKeyboardButton(f'🧿 {search} 🧿', 'reqst1')
         ]
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', 'movieimdb'),
+            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', 'reqst1'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
@@ -1653,12 +1653,12 @@ async def auto_filter(client, msg, spoll=False):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'🧿 {search} 🧿', 'movieimdb')
+            InlineKeyboardButton(f'🧿 {search} 🧿', 'reqst1')
         ]
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'ғɪʟᴇs: {total_results}', 'movieimdb'),
+            InlineKeyboardButton(f'ғɪʟᴇs: {total_results}', 'reqst1'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
