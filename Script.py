@@ -429,9 +429,7 @@ To Get Sticker ID
 • 𝖾𝗇 = 𝖤𝗇𝗀𝗅𝗂𝗌𝗁
 • 𝗆𝗅 = 𝖬𝖺𝗅𝖺𝗒𝖺𝗅𝖺𝗆
 • 𝗁𝗂 = 𝖧𝗂𝗇𝖽𝗂"""
-    
-    IMDB_TXT = f"<b>〓〓〓 <a href={url}>{title}</a> 〓〓〓\n\n⭐️ ɪᴍᴅʙ  {rating} | ⏰ ʀᴜɴ {runtime} ᴍɪɴ |\n📆 ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ : {release_date}</b>\n\n● <code>{genres}</code>\n● <code>languages</code>\n\n📖 <b>ꜱᴛᴏʀʏ</b> : {plot}\n\n<b><i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ <a href='https://t.me/CL_FILTER_BOT'>ᴛʜᴏᴍᴀs sʜᴇʟʙʏ</a></i></b></a>"
-
+   
     RESTRIC_TXT = """➤ 𝐇𝐞𝐥𝐩: Mᴜᴛᴇ 🚫
 
 𝚃𝚑𝚎𝚜𝚎 𝚊𝚛𝚎 𝚝𝚑𝚎 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜 𝚊 𝚐𝚛𝚘𝚞𝚙 𝚊𝚍𝚖𝚒𝚗 𝚌𝚊𝚗 𝚞𝚜𝚎 𝚝𝚘 𝚖𝚊𝚗𝚊𝚐𝚎 𝚝𝚑𝚎𝚒𝚛 𝚐𝚛𝚘𝚞𝚙 𝚖𝚘𝚛𝚎 𝚎𝚏𝚏𝚒𝚌𝚒𝚎𝚗𝚝𝚕𝚢.
