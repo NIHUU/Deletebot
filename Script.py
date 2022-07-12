@@ -60,7 +60,7 @@ Pay attention to the following…
     
     SPELL_TXT = '<b>Choose a Language bro , from given below</b>'
     
-    IMDB_MOVIE_2 = """
+    IMDB_MOVIE_2 = f"""
 🎬 **Title** : [{title}]({url})
 🎭 **Genre** : {genres}
 📆 **Release** : {year}
