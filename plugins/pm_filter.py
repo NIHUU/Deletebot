@@ -195,12 +195,12 @@ async def next_page(bot, query):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'🧿 {search} 🧿', 'reqst1')
+            InlineKeyboardButton(f'🧿 {search} 🧿', 'imdb2')
         ]
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', 'reqst1'),
+            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', 'imdb2'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
@@ -1087,7 +1087,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "movss":
         await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ⪼ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ⪼ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ⪼ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴋɢꜰ ᴄʜᴀᴘᴛᴇʀ 2  2022\n\n✘ ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© Tʜᴏᴍᴀs Sʜᴇʟʙʏ", show_alert=True)
 
-    elif query.data == "movieimdb":
+    elif query.data == "imdb2":
         await query.answer(script.IMDB_MOVIE_2.format(mention=query.from_user.mention, query=query.text, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), url=imdb['url'], short=imdb['plot']), show_alert=True)
         
     elif query.data == "moviis":  
@@ -1653,12 +1653,12 @@ async def auto_filter(client, msg, spoll=False):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'🧿 {search} 🧿', 'reqst1')
+            InlineKeyboardButton(f'🧿 {search} 🧿', 'imdb2')
         ]
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'ғɪʟᴇs: {total_results}', 'reqst1'),
+            InlineKeyboardButton(f'ғɪʟᴇs: {total_results}', 'imdb2'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
