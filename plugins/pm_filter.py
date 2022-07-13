@@ -1789,7 +1789,9 @@ async def advantage_spell_chok(msg):
         InlineKeyboardButton('ɪɴsᴛʀᴜᴄᴛɪᴏɴ', callback_data='try'),
         InlineKeyboardButton('ɢᴏᴏɢʟᴇ', url=f'https://google.com/search?q={msg.text.replace(" ", "+")}')
     ]]        
-    k=await msg.reply_text(text=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
+    k=imdb=await get_poster(msg.text)
+    if imdb and imdb.get('poster'):
+        await message.reply_photo(photo=imdb.get('poster'), caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=msg.text, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), url=imdb['url'], short=imdb['plot']), reply_markup=reply_markup) 
     await asyncio.sleep(40)
     await k.delete()
     await msg.delete()
