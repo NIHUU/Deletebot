@@ -1088,6 +1088,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ⪼ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ⪼ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ⪼ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴋɢꜰ ᴄʜᴀᴘᴛᴇʀ 2  2022\n\n✘ ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© Tʜᴏᴍᴀs Sʜᴇʟʙʏ", show_alert=True)
 
     elif query.data == "imdbmovieinfo":
+        imdb=await get_poster(query.text)
         await query.answer(script.IMDB_MOVIE_2.format(mention=query.from_user.mention, query=query.text, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), url=imdb['url'], short=imdb['plot']), reply_markup=reply_markup, show_alert=True)
         
     elif query.data == "moviis":  
@@ -1789,9 +1790,7 @@ async def advantage_spell_chok(msg):
         InlineKeyboardButton('ɪɴsᴛʀᴜᴄᴛɪᴏɴ', callback_data='try'),
         InlineKeyboardButton('ɢᴏᴏɢʟᴇ', url=f'https://google.com/search?q={msg.text.replace(" ", "+")}')
     ]]        
-    k=imdb=await get_poster(msg.text)
-    if imdb and imdb.get('poster'):
-        await msg.reply_photo(photo=imdb.get('poster'), caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=msg.text, title=imdb.get('title'), genres=imdb.get('genres'), year=imdb.get('year'), rating=imdb.get('rating'), url=imdb['url'], short=imdb['plot']), reply_markup=reply_markup) 
+    k=await msg.reply_text(text=script.ENGLISHSPELL_TXT, reply_markup=InlineKeyboardMarkup(btn))    
     await asyncio.sleep(40)
     await k.delete()
     await msg.delete()
