@@ -557,11 +557,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
       
         await query.answer()
         ms3 = await client.send_cached_media(
-             chat_id=CH_FILTER,
-             file_id=file_id,
-             caption=f'<b>ʜᴇʏ 👋 {query.from_user.mention}</b> 😍\n\n<code>[CL] {title}</code>\n\n⚠️ <i>This file will be deleted from here within 5 minute as it has copyright ... !!!</i>\n\n<i>കോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഫയൽ 5 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ് അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!</i>\n\n<i><b>⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ {query.message.chat.title}</b></i>',
-             reply_markup = InlineKeyboardMarkup(buttons),
-             protect_content=True if ident == "filep" else False 
+            chat_id=CH_FILTER,
+            file_id=file_id,
+            caption=f'<b>ʜᴇʏ 👋 {query.from_user.mention}</b> 😍\n\n<code>[CL] {title}</code>\n\n⚠️ <i>This file will be deleted from here within 5 minute as it has copyright ... !!!</i>\n\n<i>കോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഫയൽ 5 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ് അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!</i>\n\n<i><b>⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ {query.message.chat.title}</b></i>',
+            reply_markup = InlineKeyboardMarkup(buttons),
+            protect_content=True if ident == "filep" else False 
         )
         msg4 = await query.message.reply(
         f'<b> ʜᴇʏ 👋 {query.from_user.mention} </b>😍\n\n<b>📫 ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ 👇</b>\n\n'           
