@@ -556,11 +556,28 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
       
         await query.answer()
-        await client.send_cached_media(
-            chat_id=query.from_user.id,
+        n = await client.send_cached_media(
+            chat_id=CH_FILTER,
             file_id=file_id,
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
+        )
+        n2 = await query.message.reply(
+        f'<b> ʜᴇʏ 👋 {query.from_user.mention} </b>😍\n\n<b>📫 ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ 👇</b>\n\n'           
+        f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[CL] {title}</code>\n\n'              
+        f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
+        True,
+        'html',
+        disable_web_page_preview=True,
+        reply_markup=InlineKeyboardMarkup([[     
+                [
+                    InlineKeyboardButton("📥  ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ  📥", url = n.link)
+                ],
+                [
+                    InlineKeyboardButton("⚠️ ᴄᴀɴɴᴏᴛ ᴀᴄᴄᴇss ❓ ᴄʟɪᴄᴋ ʜᴇʀᴇ ⚠️", url = f"{CH_LINK}")
+                ]
+   
+          ]])
         )
         
     elif query.data == "removebg":
