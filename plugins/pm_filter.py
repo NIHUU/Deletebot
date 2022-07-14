@@ -1087,16 +1087,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "about":
         buttons = [[
-        InlineKeyboardButton('📊 sᴛᴀᴛᴜs', callback_data='stats'),
-        InlineKeyboardButton('🔖 sᴜᴘᴘᴏʀᴛ', url="https://t.me/NL_BOTxCHAT"),
-        InlineKeyboardButton('🥺 ʜᴇʟᴘ', callback_data='help')
+                InlineKeyboardButton('📊 sᴛᴀᴛᴜs', callback_data='stats'),
+                InlineKeyboardButton('🔖 sᴜᴘᴘᴏʀᴛ', url="https://t.me/NL_BOTxCHAT"),
+                InlineKeyboardButton('🥺 ʜᴇʟᴘ', callback_data='help')
         ],[
-        InlineKeyboardButton('🏡 ʜᴏᴍᴇ', callback_data='start'),
-        InlineKeyboardButton('⛔️ ᴄʟᴏsᴇ', callback_data='close_data')
+                InlineKeyboardButton('🏡 ʜᴏᴍᴇ', callback_data='start'),
+                InlineKeyboardButton('⛔️ ᴄʟᴏsᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.ABOUT_TXT.format(temp.B_NAME),
+            text=script.ABOUT_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html',
