@@ -181,11 +181,7 @@ async def start(client, message):
                     
             if f_caption is None:
                 f_caption = f"{title}"
-            buttons = [
-                [
-                    InlineKeyboardButton('➕ Add Bot To Your Group ➕', url='http://t.me/CL_FILTER_BOT?startgroup=true')
-                ]
-                ]
+            
             try:
                 await client.send_cached_media(
                     chat_id=message.from_user.id,
