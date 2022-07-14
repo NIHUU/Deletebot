@@ -585,8 +585,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
     await msg4.delete()            
     await ms3.delete()
     del msg4, ms3
-except Exception as e:
-    logger.exception(e, exc_info=True)
         
     elif query.data == "removebg":
         await query.message.edit_text(
