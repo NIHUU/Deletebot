@@ -1522,7 +1522,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.reply_photo(
             photo="https://telegra.ph/file/e5a98d4c5de82c58b450c.jpg",
             caption=script.ABOUT_TXT,
-            disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
         )
