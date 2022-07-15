@@ -495,7 +495,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     chat_id=CH_FILTER,
                     file_id=file_id,
                     caption=f'<b>ʜᴇʏ 👋 {query.from_user.mention}</b> 😍\n\n<code>[CL] {title}</code>\n\n⚠️ <i>This file will be deleted from here within 5 minute as it has copyright ... !!!</i>\n\n<i>കോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഫയൽ 5 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ് അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!</i>\n\n<i><b>⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ {query.message.chat.title}</b></i>',
-                    reply_markup = InlineKeyboardMarkup(buttons),
                     protect_content=True if ident == "filep" else False 
                 )
                 msg1 = await query.message.reply(
@@ -525,12 +524,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
-            await query.answer(f"☆ 𝐇𝐄𝐘 𝐈 𝐋𝐈𝐊𝐄 𝐘𝐎𝐔𝐑 𝐒𝐌𝐀𝐑𝐓𝐍𝐄𝐒 ! 𝐁𝐔𝐓 𝐃𝐎𝐍𝐓 𝐁𝐄 𝐎𝐕𝐄𝐑𝐒𝐌𝐀𝐑𝐓 😏",show_alert=True)
+            await query.answer(f"ʜᴇʏ {query.from_user.first_name} ɪ ʟɪᴋᴇ ʏᴏᴜʀ sᴍᴀʀᴛɴᴇss ʙᴜᴛ ᴅᴏɴᴛ ʙᴇ ᴏᴠᴇʀsᴍᴀʀᴛ 😒",show_alert=True)
             return
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
         if not files_:
-            await query.answer(f"🦋 ʜᴇʟʟᴏ ᴍʏ ғʀɪᴇɴᴅ ᴘʟᴇᴀsᴇ sᴇɴᴛ ʀᴇǫᴜᴇsᴛ ᴀɢᴀɪɴ 🦋",show_alert=True)
+            await query.answer(f"ʜᴇʏ {query.from_user.first_name} ɴᴏ sᴜᴄʜ ғɪʟᴇ ғᴏᴜɴᴅ",show_alert=True)
         files = files_[0]
         title = files.file_name
         size = get_size(files.file_size)
@@ -563,8 +562,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup( 
                 [[
                     InlineKeyboardButton("📥  ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ  📥", url = n.link)
-                ],
-                [
+                    ],[
                     InlineKeyboardButton("⚠️ ᴄᴀɴɴᴏᴛ ᴀᴄᴄᴇss ❓ ᴄʟɪᴄᴋ ʜᴇʀᴇ ⚠️", url = f"{CH_LINK}")
                 ]]
    
