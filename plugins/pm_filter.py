@@ -549,7 +549,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
                 InlineKeyboardButton('✨️ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ✨️', url=f'https://t.me/{SUPPORT_CHAT}')
             ]]
-        await query.answer("ᴄʜᴇᴄᴋɪɴɢ....)
+        await query.answer("ᴄʜᴇᴄᴋɪɴɢ....")
         n = await client.send_cached_media(
             chat_id=CH_FILTER,
             file_id=file_id,
