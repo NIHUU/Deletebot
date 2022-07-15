@@ -849,7 +849,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🌿 ɢʀᴏᴜᴘ', url='https://t.me/cinema_lookam')
             ],[      
             InlineKeyboardButton('⚙️ ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='infoofbot')
+            InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
             ],[
             InlineKeyboardButton('🔰 ɢᴏ ʙᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴍᴇɴᴜ 🔰', callback_data='nihu')   
         ]]
