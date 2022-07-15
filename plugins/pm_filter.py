@@ -480,12 +480,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f"{files.file_name}"
             size = f"{files.file_size}"
             mention = f"{query.from_user.mention}"
-        buttons = [[
-            InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
-            InlineKeyboardButton('💞 sʜᴀʀᴇ', url="https://t.me/share/url?url=😱%20CINEMA%20LOOKAM.²·⁰%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@cinema_lookam%0A@cinema_lookam%0A@cinema_lookam")
-            ],[
-            InlineKeyboardButton(f'🌿 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🌿', 'dupe')
-        ]]
+        buttons = [
+            [
+                InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
+                InlineKeyboardButton('💞 sʜᴀʀᴇ', url="https://t.me/share/url?url=😱%20CINEMA%20LOOKAM.²·⁰%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@cinema_lookam%0A@cinema_lookam%0A@cinema_lookam")
+            ],
+            [
+                InlineKeyboardButton(f'🌿 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🌿', 'dupe')
+            ]
+            ]
         
 
         try:
@@ -550,13 +553,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = f_caption
         if f_caption is None:
             f_caption = f"{title}"
-        buttons = [[
-            InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
-            InlineKeyboardButton('💞 sʜᴀʀᴇ', url="https://t.me/share/url?url=😱%20CINEMA%20LOOKAM.²·⁰%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@cinema_lookam%0A@cinema_lookam%0A@cinema_lookam")
-            ],[
-            InlineKeyboardButton(f'🌿 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🌿', 'dupe')
-        ]]
-              
+        buttons = [
+            [
+                InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
+                InlineKeyboardButton('💞 sʜᴀʀᴇ', url="https://t.me/share/url?url=😱%20CINEMA%20LOOKAM.²·⁰%20😱%0A%0Aഏത്%20അർധരാത്രി%20ചോദിച്ചാലും%20പടം%20കിട്ടും,%20ലോകത്തിലെ%20ഒട്ടുമിക്ക%20ഭാഷകളിലുമുള്ള%20സിനിമകളുടെ%20കളക്ഷൻ..%20❤️%0A%0A👇%20GROUP%20LINK%20👇%0A@cinema_lookam%0A@cinema_lookam%0A@cinema_lookam")
+            ],
+            [
+                InlineKeyboardButton(f'🌿 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🌿', 'dupe')
+            ]
+            ]
         await query.answer()
         n = await client.send_cached_media(
             chat_id=CH_FILTER,
