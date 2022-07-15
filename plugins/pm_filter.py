@@ -1041,6 +1041,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+        
+    elif query.data == "about":
+        buttons = [[
+            InlineKeyboardButton('ɢʀᴏᴜᴘ', url='https://t.me/cinema_lookam'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url="https://t.me/NL_BOTxCHAT")
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start')
+        ]]
+        reply_markup=InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(scrip.ABOUT_TXT, reply_markup=reply_markup, parse_mode='html')
+        
     elif query.data == "filters":
         buttons= [[
             InlineKeyboardButton('📀 ᴍᴀɴᴜᴀʟ ғɪʟᴛᴇʀ', callback_data='manuelfilter')
@@ -1509,22 +1519,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == 'reqst1':
         await query.answer("Hey Bro 😍\n\n🎯 Click On The Button below The Files You Want  ⬇️", show_alert=True)
         
-    elif query.data == "infoofbot":
-        buttons = [[
-            InlineKeyboardButton('📊 sᴛᴀᴛᴜs', callback_data='stats'),
-            InlineKeyboardButton('🔖 sᴜᴘᴘᴏʀᴛ', url="https://t.me/NL_BOTxCHAT"),
-            InlineKeyboardButton('🥺 ʜᴇʟᴘ', callback_data='help')
-            ],[
-            InlineKeyboardButton('🏡 ʜᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('⛔️ ᴄʟᴏsᴇ', callback_data='close_data')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.reply_photo(
-            photo="https://telegra.ph/file/e5a98d4c5de82c58b450c.jpg",
-            caption=script.ABOUT_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
+    
         
     elif query.data == "stats":
         buttons = [[
