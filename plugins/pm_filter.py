@@ -481,7 +481,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             size = f"{files.file_size}"
             mention = f"{query.from_user.mention}"
         buttons = [[
-                InlineKeyboardButton('✨️ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ✨️', url=f'https://t.me/{SUPPORT_CHAT}')
+                InlineKeyboardButton('✨️ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ✨️', url=f'https://t.me/cinema_lookam')
             ]]      
 
         try:
@@ -547,7 +547,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if f_caption is None:
             f_caption = f"{title}"
         buttons = [[
-                InlineKeyboardButton('✨️ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ✨️', url=f'https://t.me/{SUPPORT_CHAT}')
+                InlineKeyboardButton('✨️ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ✨️', url=f'https://t.me/cinema_lookam')
             ]]
         await query.answer("ᴄʜᴇᴄᴋɪɴɢ....")
         n = await client.send_cached_media(
