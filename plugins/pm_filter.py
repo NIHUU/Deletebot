@@ -9,7 +9,7 @@ import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, \
-    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, CH_FILTER, CH_LINK, PICS
+    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, CH_FILTER, CH_LINK
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -839,7 +839,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=START_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html',
+            parse_mode='html'
         )
     elif query.data == "start":
         buttons = [[
@@ -854,26 +854,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔰 ɢᴏ ʙᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴍᴇɴᴜ 🔰', callback_data='nihu')   
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.delete()
-        if not PICS:
-            await query.message.reply(
-                script.START_TXT.format(
-                    query.from_user.mention, 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
-        else:
-            await query.message.reply_photo(
-                photo=PICS,
-                caption=script.START_TXT.format(
-                    query.from_user.mention , 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
+        await query.message.edit_text(
+            text=START_TXT,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html',
+        )
         
     elif query.data == "photo":
         buttons = [[
@@ -1062,8 +1048,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url="https://t.me/NL_BOTxCHAT"),
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start')
         ]]
-        reply_markup=InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(script.ABOUT_TXT, reply_markup=reply_markup, parse_mode='html')
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.delete()
+        await query.message.reply(
+            text=script.ABOUT_TXT.format(temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html',
+            disable_web_page_preview=True
+        )
         
     elif query.data == "filters":
         buttons= [[
