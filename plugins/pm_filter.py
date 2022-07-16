@@ -1526,8 +1526,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("Hey Bro 😍\n\n🎯 Click On The Button below The Files You Want  ⬇️", show_alert=True)
         
     elif query.data == "movie_info":
-        imdb=await get_poster(search)
-            await query.answer(f"IMDb Data:\n\n🏷 Title:<a href={imdb['url']}>{imdb.get('title')}</a>\n🎭 Genres: {imdb.get('genres')}\n📆 Year:<a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>\n🌟 Rating: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10\n🖋 StoryLine: <code>{imdb.get('plot')} </code>", reply_markup=InlineKeyboardMarkup(btn), show_alert=True)
+        imdb=await get_poster(query.text)
+        await query.answer(f"IMDb Data:\n\n🏷 Title: {imdb.get('title')}\n🎭 Genres: {imdb.get('genres')}\n📆 Year:{imdb.get('year')}\n🌟 Rating: {imdb.get('rating')} / 10\n🖋 StoryLine: <code>{imdb.get('plot')} </code>", reply_markup=InlineKeyboardMarkup(btn), show_alert=True)
         
     elif query.data == "stats":
         buttons = [[
