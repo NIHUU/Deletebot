@@ -2,13 +2,13 @@ class script(object):
     START_TXT = """<b>ʜᴇʏ  {}  ʙᴜᴅᴅʏ \n
 ᴍʏ ɴᴀᴍᴇ ɪꜱ  <a href=https://t.me/CL_FILTER_BOT><b>『 𝐓ʜᴏᴍᴀs 𝐒ʜᴇʟʙʏ 』</b></a>  ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ᴍᴏᴠɪᴇꜱ ᴊᴜꜱᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ 😈</b>"""
     HELP_TXT = """<b>🚩 ʜᴇʟʟᴏ {} ʙᴜᴅᴅʏ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ʜᴇʟᴘ ᴍᴏᴅᴜʟᴇ 💝</b>"""
-    ABOUT_TXT = """<b>○ 𝖬𝗒 𝖭𝖺𝗆e : Thomas Shelby
-○ 𝖢𝗋𝖾𝖺𝗍𝗈𝗋 : <a herf=https://t.me/NL_MP4>NL</a>
+    ABOUT_TXT = """<b>○ 𝖬𝗒 𝖭𝖺𝗆e : <a href=https://t.me/CL_FILTER_BOT><b>Thomas Shelby</b></a>
+○ 𝖢𝗋𝖾𝖺𝗍𝗈𝗋 : <a href=https://t.me/NL_MP4><b>ɴɪʜᴀᴀʟ 🇮🇳</b></a>
 ○ 𝖫𝖺𝗇𝗀𝗎𝖺𝗀𝖾 : 𝖯𝗒𝗍𝗁𝗈𝗇 𝟥 
 ○ 𝖫𝗂𝖻𝗋𝖺𝗋𝗒 : 𝖯𝗒𝗋𝗈𝗀𝗋𝖺𝗆 𝖺𝗌𝗒𝗇𝖼𝗂𝗈 𝟢.𝟣𝟩.𝟣 
 ○ 𝖲𝖾𝗋𝗏𝖾𝗋 : Heroku
-○ 𝖣𝖺𝗍𝖺𝖻𝖺𝗌𝖾 : 𝖬𝗈𝗇𝗀𝗈𝖣𝖡
-○ 𝖡𝗎𝗂𝗅𝖽 𝖲𝗍𝖺𝗍𝗎𝗌 : 𝖵9.8 [BeTa]"""
+○ 𝖣𝖺𝗍𝖺𝖻𝖺𝗌𝖾 : <a href=www.mangodb.com><b>MangoDB</b></a>
+○ 𝖡𝗎𝗂𝗅𝖽 𝖲𝗍𝖺𝗍𝗎𝗌 : 𝖵9.8 [BeTa]</b>"""
 
     FILTER_TXT = """<b>ʜᴇʏ 👋 {} ᴅᴜᴅᴇ 🤤\n⚙️ sᴇʟᴇᴄᴛ ғɪʟᴛᴇʀ ʏᴏᴜ ᴡᴀɴᴛ 😊</b>"""
     
