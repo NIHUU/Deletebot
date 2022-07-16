@@ -1525,7 +1525,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == 'reqst1':
         await query.answer("Hey Bro 😍\n\n🎯 Click On The Button below The Files You Want  ⬇️", show_alert=True)
         
-    
+    elif query.data == "movie_info":
+        await query.answer(script.IMDB_TEXT_2.format(), show_alert=True)
         
     elif query.data == "stats":
         buttons = [[
