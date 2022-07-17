@@ -1475,9 +1475,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton(f"▫ {get_size(file.file_size)}  ‣  {file.file_name}" else '✅', 'dupe')
             ],[
-            InlineKeyboardButton('exit', callback_data='close,)
+            InlineKeyboardButton('exit', callback_data='close_data'),
+            InlineKeyboardButton('send', callback_data=f'{pre}#{file.file_id}')
+            ],[
+            InlineKeyboardButton('pages', 'dupe')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
+        await query.message.edit_reply_markup(reply_markup)
         
     elif query.data == "admin":
         buttons= [[
