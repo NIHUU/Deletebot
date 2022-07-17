@@ -1473,7 +1473,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "select":
         buttons = [[
-            InlineKeyboardButton(f"▫ {get_size(file.file_size)}  ‣  {file.file_name}" else '✅', 'dupe')
+            InlineKeyboardButton(f'▫ {get_size(file.file_size)}  ‣  {file.file_name}' else '✅',
+                                 callback_data='dupe')
             ],[
             InlineKeyboardButton('exit', callback_data='close_data'),
             InlineKeyboardButton('send', callback_data=f'{pre}#{file.file_id}')
