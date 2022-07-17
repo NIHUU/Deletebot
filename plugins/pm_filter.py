@@ -200,7 +200,7 @@ async def next_page(bot, query):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', callback_data='moviis'),
+            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', callback_data='select'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
@@ -1470,6 +1470,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+        
+    elif query.data == "select":
+        buttons = [[
+            InlineKeyboardButton(f"▫ {get_size(file.file_size)}  ‣  {file.file_name}" else '✅', 'dupe')
+            ],[
+            InlineKeyboardButton('exit', callback_data='close,)
+        ]]
+        reply_markup=InlineKeyboardMarkup(buttons)
+        
     elif query.data == "admin":
         buttons= [[
             InlineKeyboardButton(' ʙᴀᴄᴋ', callback_data='help'),
@@ -1676,7 +1685,7 @@ async def auto_filter(client, msg, spoll=False):
     )
     btn.insert(1, 
         [
-            InlineKeyboardButton(f'ғɪʟᴇs: {total_results}', callback_data='moviis'),
+            InlineKeyboardButton(f'ғɪʟᴇs: {total_results}', callback_data='select'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
