@@ -1471,20 +1471,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
         
-    elif query.data == "select":
-    if settings is not None:
-        buttons = [[
-            InlineKeyboardButton(f'▫ {get_size(file.file_size)}  ‣  {file.file_name}' if settings["button"] else '✅',
-                                 callback_data='dupe')
-            ],[
-            InlineKeyboardButton('exit', callback_data='close_data'),
-            InlineKeyboardButton('send', callback_data=f'{pre}#{file.file_id}')
-            ],[
-            InlineKeyboardButton('pages', 'dupe')
-        ]]
-        reply_markup=InlineKeyboardMarkup(buttons)
-        await query.message.edit_reply_markup(reply_markup)
-        
+    
     elif query.data == "admin":
         buttons= [[
             InlineKeyboardButton(' ʙᴀᴄᴋ', callback_data='help'),
@@ -1583,6 +1570,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
       )
+    elif query.data == "select":
+        if settings is not None:
+            buttons = [[
+                    InlineKeyboardButton(f'▫ {get_size(file.file_size)}  ‣  {file.file_name}' if settings["button"] else '✅',
+                                         callback_data='dupe')
+                    ],[
+                    InlineKeyboardButton('exit', callback_data='close_data'),
+                    InlineKeyboardButton('send', callback_data=f'{pre}#{file.file_id}')
+                    ],[
+                    InlineKeyboardButton('pages', 'dupe')
+            ]]
+            reply_markup=InlineKeyboardMarkup(buttons)
+            await query.message.edit_reply_markup(reply_markup)
+        
     
     elif query.data.startswith("setgs"):
         ident, set_type, status, grp_id = query.data.split("#")
