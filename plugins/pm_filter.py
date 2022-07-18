@@ -3,6 +3,7 @@ import datetime
 import pytz
 import re
 import ast
+import psutil
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
