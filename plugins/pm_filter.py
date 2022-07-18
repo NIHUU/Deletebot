@@ -6,6 +6,7 @@ import ast
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
+import imdb
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, \
@@ -91,11 +92,11 @@ async def fil_mod(client, message):
 
       if args in mode_on:
           FILTER_MODE[str(message.chat.id)] = "True" 
-          await m.edit("**𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝙴𝙽𝙰𝙱𝙻𝙴𝙳**")
+          await m.edit("**Aᴜᴛᴏ Fɪʟᴛᴇʀ Eɴᴀʙʟᴇᴅ**")
       
       elif args in mode_of:
           FILTER_MODE[str(message.chat.id)] = "False"
-          await m.edit("**𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝙳𝙸𝚂𝙰𝙱𝙻𝙴𝙳**")
+          await m.edit("**Aᴜᴛᴏ Fɪʟᴛᴇʀ Dɪsᴀʙʟᴇᴅ**")
       else:
           await m.edit("𝚄𝚂𝙴 :- /autofilter on 𝙾𝚁 /autofilter off")
 
@@ -184,10 +185,10 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"『🎪 {file.file_name} 🎪』", callback_data=f'files#{file.file_id}'
+                    text=f"🎪 {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
                 InlineKeyboardButton(
-                    text=f"『🔮 {get_size(file.file_size)} 🔮』",
+                    text=f"『{get_size(file.file_size)}』",
                     callback_data=f'files_#{file.file_id}',
                 ),
             ]
@@ -195,12 +196,7 @@ async def next_page(bot, query):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'🧿 {search} 🧿', 'moviis')
-        ]
-    )
-    btn.insert(1, 
-        [
-            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', callback_data='select'),
+            InlineKeyboardButton(f'ғɪʟᴇs: {len(files)}', callback_data='movie_info'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
@@ -1528,9 +1524,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("Hey Bro 😍\n\n🎯 Click On The Button below The Files You Want  ⬇️", show_alert=True)
         
     elif query.data == "movie_info":
-        message = query
-        search = message.text
-        imdb=await get_poster(search)
         await message.answer(f"IMDb Data:\n\n🏷 Title: {imdb.get('title')}\n🎭 Genres: {imdb.get('genres')}\n📆 Year:{imdb.get('year')}\n🌟 Rating: {imdb.get('rating')} / 10\n🖋 StoryLine: <code>{imdb.get('plot')} </code>", reply_markup=InlineKeyboardMarkup(btn), show_alert=True)
         
     elif query.data == "stats":
@@ -1570,20 +1563,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
       )
-    elif query.data == "select":
-        if settings is not None:
-            buttons = [[
-                    InlineKeyboardButton(f'▫ {get_size(file.file_size)}  ‣  {file.file_name}',
-                                         callback_data=f'{pre}_#{file_id}')
-                    ],[
-                    InlineKeyboardButton('exit', callback_data='close_data'),
-                    InlineKeyboardButton('send', callback_data=f'{pre}#{file_id}')
-                    ],[
-                    InlineKeyboardButton('pages', 'dupe')
-            ]]
-            reply_markup=InlineKeyboardMarkup(buttons)
-            await query.message.edit_reply_markup(reply_markup)
-        
+
     
     elif query.data.startswith("setgs"):
         ident, set_type, status, grp_id = query.data.split("#")
@@ -1687,7 +1667,7 @@ async def auto_filter(client, msg, spoll=False):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'ғɪʟᴇs: {total_results}', callback_data='select'),
+            InlineKeyboardButton(f'ғɪʟᴇs: {total_results}', callback_data='movie_info'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'moviis')
         ]
