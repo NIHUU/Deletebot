@@ -58,7 +58,7 @@ async def showid(client, message):
         )
 
 @Client.on_message(filters.command("owner"))
-async def aboutme(client, message):
+async def owner(client, message):
         buttons = [[       
             InlineKeyboardButton('🔰 ɪɴsᴛᴀɢʀᴀᴍ 🔰', url='https://instagram.com/__nihaal_efx__?igshid=YmMyMTA2M2Y='),
             InlineKeyboardButton('🔰 ᴛᴇʟᴇɢʀᴀᴍ 🔰', url='https://t.me/NL_MP4')
@@ -74,7 +74,22 @@ async def aboutme(client, message):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-
+        
+@Client.on_message(filters.command("about"))
+async def aboutme(client, message):
+        buttons = [[
+            InlineKeyboardButton('ɢʀᴏᴜᴘ', url='https://t.me/cinema_lookam'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url='https://t.me/NL_BOTxCHAT'),
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await message.reply_photo(
+            photo="",
+            caption=script.ABOUT_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+        
 @Client.on_message(filters.command(["info"]))
 async def who_is(client, message):
     # https://github.com/SpEcHiDe/PyroGramBot/blob/master/pyrobot/plugins/admemes/whois.py#L19
