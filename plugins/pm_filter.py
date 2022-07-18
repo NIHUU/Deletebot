@@ -1154,7 +1154,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             nihaal="ɢᴏᴏᴅ ɴɪɢʜᴛ"
           
         SPELL_TXT = f"""
-{nihaal} {query.from_user.mention} ᴄʜᴏᴏsᴇ ᴀ ʟᴀɴɢᴜᴀɢᴇ ʙʀᴏ
+{nihaal} ✨ {query.from_user.mention} ᴄʜᴏᴏsᴇ ᴀ ʟᴀɴɢᴜᴀɢᴇ ʙʀᴏ
 """
             
         btn = [[
@@ -1573,11 +1573,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "select":
         if settings is not None:
             buttons = [[
-                    InlineKeyboardButton(f'▫ {get_size(file.file_size)}  ‣  {file.file_name}' if settings["button"] else '✅',
-                                         callback_data='dupe')
+                    InlineKeyboardButton(f'▫ {get_size(file.file_size)}  ‣  {file.file_name}',
+                                         callback_data=f'{pre}_#{file_id}')
                     ],[
                     InlineKeyboardButton('exit', callback_data='close_data'),
-                    InlineKeyboardButton('send', callback_data=f'{pre}#{file.file_id}')
+                    InlineKeyboardButton('send', callback_data=f'{pre}#{file_id}')
                     ],[
                     InlineKeyboardButton('pages', 'dupe')
             ]]
@@ -1674,11 +1674,11 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"『🎪 {file.file_name} 🎪』",
+                    text=f"🎪 {file.file_name}",
                     callback_data=f'{pre}#{file.file_id}',
                 ),
                 InlineKeyboardButton(
-                    text=f"『🔮 {get_size(file.file_size)} 🔮』",
+                    text=f"『{get_size(file.file_size)}』",
                     callback_data=f'{pre}_#{file.file_id}',
                 ),
             ]
@@ -1686,11 +1686,6 @@ async def auto_filter(client, msg, spoll=False):
             for file in files
         ]
     btn.insert(0, 
-        [
-            InlineKeyboardButton(f'🧿 {search} 🧿', 'moviis')
-        ]
-    )
-    btn.insert(1, 
         [
             InlineKeyboardButton(f'ғɪʟᴇs: {total_results}', callback_data='select'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movss'),
@@ -1704,7 +1699,7 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton("ᴘᴀɢᴇs", callback_data="pages"),
-             InlineKeyboardButton(text=f"1/{round(int(total_results) / 10)}", callback_data="pages"),
+             InlineKeyboardButton(text=f"1-{round(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
