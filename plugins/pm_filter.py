@@ -1524,7 +1524,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("Hey Bro 😍\n\n🎯 Click On The Button below The Files You Want  ⬇️", show_alert=True)
         
     elif query.data == "movie_info":
-        await message.answer(f"IMDb Data:\n\n🏷 Title: {imdb.get('title')}\n🎭 Genres: {imdb.get('genres')}\n📆 Year:{imdb.get('year')}\n🌟 Rating: {imdb.get('rating')} / 10\n🖋 StoryLine: <code>{imdb.get('plot')} </code>", reply_markup=InlineKeyboardMarkup(btn), show_alert=True)
+        await query.answer(f"IMDb Data:\n\n🏷 Title: {imdb.get('title')}\n🎭 Genres: {imdb.get('genres')}\n📆 Year:{imdb.get('year')}\n🌟 Rating: {imdb.get('rating')} / 10\n🖋 StoryLine: <code>{imdb.get('plot')} </code>", reply_markup=InlineKeyboardMarkup(btn), show_alert=True)
         
     elif query.data == "stats":
         buttons = [[
@@ -1532,6 +1532,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('♻️ ʀᴇғʀᴇsʜ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        cpu = psutil.cpu_percent()
+        ram = psutil.virtual_memory().percent
         total = await Media.count_documents()
         users = await db.total_users_count()
         chats = await db.total_chat_count()
@@ -1551,6 +1553,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('♻️ ʀᴇғʀᴇsʜ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        cpu = psutil.cpu_percent()
+        ram = psutil.virtual_memory().percent
         total = await Media.count_documents()
         users = await db.total_users_count()
         chats = await db.total_chat_count()
@@ -1679,7 +1683,7 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton("ᴘᴀɢᴇs", callback_data="pages"),
-             InlineKeyboardButton(text=f"1-{round(int(total_results) / 10)}", callback_data="pages"),
+             InlineKeyboardButton(text=f"1 - {round(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="ɴᴇxᴛ", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
