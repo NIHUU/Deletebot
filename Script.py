@@ -309,8 +309,15 @@ This module only works for my admins
 • /broadcast - <code>to broadcast a message to all users</code>"""
     STATUS_TXT = """<b>📑 ғɪʟᴇs sᴀᴠᴇᴅ: <code>{}</code>
 👩🏻‍💻 ᴜsᴇʀs: <code>{}</code>
+
 👥 ɢʀᴏᴜᴘs: <code>{}</code>
-🗂️ ᴏᴄᴄᴜᴘɪᴇᴅ: <code>{}</code></b>"""
+
+🗂️ ᴏᴄᴄᴜᴘɪᴇᴅ: <code>{}</code>
+
+sᴇʀᴠᴇʀ sᴛᴀᴛᴜs ☂️
+ 
+💻 ᴄᴘᴜ : <code>{}%</code>
+💿 ʀᴀᴍ : <code>{}%</code></b>"""
     LOG_TEXT_G = """#𝐍𝐞𝐰𝐆𝐫𝐨𝐮𝐩
     
 <b>᚛› 𝐆𝐫𝐨𝐮𝐩 ⪼ {}(<code>{}</code>)</b>
