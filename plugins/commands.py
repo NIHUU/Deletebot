@@ -493,7 +493,7 @@ async def settings(client, message):
             ]
         ]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_reply_markup(reply_markup)
+        await message.edit_reply_markup(reply_markup)
                 
 
 
