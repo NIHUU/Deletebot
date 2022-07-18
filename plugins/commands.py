@@ -493,8 +493,34 @@ async def settings(client, message):
             ]
         ]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.edit_reply_markup(reply_markup)
-                
+
+        await message.reply_text(
+            text=f"<b>Change Your Settings for {title} As Your Wish ⚙</b>",
+            reply_markup=reply_markup,
+            disable_web_page_preview=True,
+            parse_mode="html",
+            reply_to_message_id=message.message_id
+        )
+
+
+
+@Client.on_message(
+    (
+        filters.command(["report"]) |
+        filters.regex("@admins") |
+        filters.regex("@admin")
+    ) &
+    filters.group
+)
+async def report(bot, message):
+    buttons = [[
+        InlineKeyboardButton('✅ Rᴇᴘᴏʀᴛ Sᴇɴᴛ Sᴜᴄᴄᴇssꜰᴜʟ ✅', callback_data='close_pages')
+    ]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    k = await message.reply_sticker("CAACAgUAAxkBAAEEA7liG48lVnCeDRa7XS6ljHR9c08VsQACqQADyJRkFOv8RlMxwyrKIwQ", reply_markup=reply_markup)
+    await asyncio.sleep(30)
+    await k.delete()
+    return
 
 
 
