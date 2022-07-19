@@ -309,9 +309,7 @@ This module only works for my admins
 • /broadcast - <code>to broadcast a message to all users</code>"""
     STATUS_TXT = """<b>📑 ғɪʟᴇs sᴀᴠᴇᴅ: <code>{}</code>
 👩🏻‍💻 ᴜsᴇʀs: <code>{}</code>
-
 👥 ɢʀᴏᴜᴘs: <code>{}</code>
-
 🗂️ ᴏᴄᴄᴜᴘɪᴇᴅ: <code>{}</code>
 
 sᴇʀᴠᴇʀ sᴛᴀᴛᴜs ☂️
