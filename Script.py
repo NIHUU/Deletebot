@@ -62,10 +62,10 @@ Pay attention to the following…
     
     IMDB_MOVIE_2 = """<b>
 🎬 ᴛɪᴛᴛʟᴇ : [{title}]({url})
-🌟 ʀᴜɴᴛɪᴍᴇ : {runtime}
+🌟 ʀᴜɴᴛɪᴍᴇ : {rating}
 🎭 ɢᴇɴʀᴇ : {genres}\n\n
 📆 ʀᴇʟᴇᴀsᴇ : {year}
-⏰ ᴅᴜʀᴀᴛɪᴏɴ : {duration}
+⏰ ᴅᴜʀᴀᴛɪᴏɴ : {runtime}
 🎙️ ʟᴀɴɢᴜᴀɢᴇ : <code>{language}</code>\n\n
 🔖 sʜᴏʀᴛ : <code>{short}</code>
 </b>"""
