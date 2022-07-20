@@ -1527,6 +1527,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "movie_info":
         await query.answer(f"IMDb Data:\n\n🏷 Title: {imdb.get('title')}\n🎭 Genres: {imdb.get('genres')}\n📆 Year:{imdb.get('year')}\n🌟 Rating: {imdb.get('rating')} / 10\n🖋 StoryLine: <code>{imdb.get('plot')} </code>", reply_markup=InlineKeyboardMarkup(btn), show_alert=True)
         
+    elif query.data == "reason":
+        await query.answer("wait..", show_alert=True)
+        
     elif query.data == "stats":
         buttons = [[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
@@ -1792,8 +1795,10 @@ async def advantage_spell_chok(msg):
     SPELL_CHECK[msg.message_id] = movielist
     reply = search.replace(" ", "+")
     reply_markup = InlineKeyboardMarkup([[
-     InlineKeyboardButton("🔮IMDB🔮", url=f"https://imdb.com/find?q={reply}"),
-     InlineKeyboardButton("🪐 Reason", callback_data="reason")
+     InlineKeyboardButton("🧿 ɪᴍᴅʙ", url=f"https://imdb.com/find?q={reply}")
+     ],[
+     InlineKeyboardButton("🙁 ʀᴇᴀsᴏɴ", callback_data="reason"),
+     InlineKeyboardButton("🎭 ɢᴏᴏɢʟᴇ", url=f"https://google.com/search?q={reply}")
      ]]
     )    
     imdb=await get_poster(search)
