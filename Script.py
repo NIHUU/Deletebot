@@ -62,7 +62,7 @@ Pay attention to the following…
     
     IMDB_MOVIE_2 = """<b>
 🧿 ᴛɪᴛᴛʟᴇ :  [{title}]({url})
-🌟 ʀᴜɴᴛɪᴍᴇ : <code>rating}</code>
+🌟 ʀᴜɴᴛɪᴍᴇ : <code>{rating}</code>
 🎭 ɢᴇɴʀᴇ : <code>{genres}</code>
 
 📆 ʀᴇʟᴇᴀsᴇ : <code>{year}</code>
