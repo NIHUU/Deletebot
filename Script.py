@@ -61,7 +61,7 @@ Pay attention to the following…
     SPELL_TXT = '<b>Choose a Language bro , from given below</b>'
     
     IMDB_MOVIE_2 = """<b>
-🧿 ᴛɪᴛᴛʟᴇ :  <code>[{title}]</code>
+🧿 ᴛɪᴛᴛʟᴇ :  [{title}]({url})
 🌟 ʀᴜɴᴛɪᴍᴇ : <code>rating}</code>
 🎭 ɢᴇɴʀᴇ : <code>{genres}</code>
 
