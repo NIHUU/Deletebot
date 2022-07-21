@@ -60,16 +60,27 @@ Pay attention to the following…
     
     SPELL_TXT = '<b>Choose a Language bro , from given below</b>'
     
+    REASON_TXT = """
+<i><b><u>ʀᴇᴀsᴏɴ ғᴏʀ ɴᴏᴛ ᴍᴏᴠɪᴇ</i></u></b>
+
+• ᴄʜᴇᴄᴋ ᴛʜᴇ sᴘᴇʟʟɪɴɢ ᴏғ ʀᴇǫᴜᴇsᴛ ᴍᴏᴠɪᴇ
+• ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛᴇᴅ ᴍᴏᴠɪᴇ ɪs ɴᴏᴛ ʏᴇᴛ ʀʟᴇᴀsᴇᴅ
+• ᴛʜᴀᴛ ᴍᴏᴠɪᴇ ɪs ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ
+• ᴅᴏɴ'ᴛ ᴀsᴋ ᴘʀᴏɴ ᴘʀᴏɴ ᴍᴏᴠɪᴇs
+"""
+    
     IMDB_MOVIE_2 = """<b>
 🧿 ᴛɪᴛᴛʟᴇ :  [{title}]({url})
 🌟 ʀᴜɴᴛɪᴍᴇ : <code>{rating}</code>
 🎭 ɢᴇɴʀᴇ : <code>{genres}</code>
 
 📆 ʀᴇʟᴇᴀsᴇ : <code>{year}</code>
-⏰ ᴅᴜʀᴀᴛɪᴏɴ : <code>{runtime}</code>
+⏰ ᴅᴜʀᴀᴛɪᴏɴ : <code>{runtime} ᴍ</code>
 🎙️ ʟᴀɴɢᴜᴀɢᴇ : <code>{language}</code>
 
 🔖 sʜᴏʀᴛ : <code>{short}</code>
+
+<i>★ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : {group}</i>
 </b>"""
  
     DONATION_TXT = """<b>𝐃𝐨𝐧𝐚𝐭𝐢𝐨𝐧 & 𝐏𝐚𝐢𝐝 𝐏𝐫𝐨𝐦𝐨𝐭𝐢𝐨𝐧</b> 
