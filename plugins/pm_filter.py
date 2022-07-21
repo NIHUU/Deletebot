@@ -1795,17 +1795,17 @@ async def advantage_spell_chok(msg):
     SPELL_CHECK[msg.message_id] = movielist
     reply = search.replace(" ", "+")
     reply_markup = InlineKeyboardMarkup([[
-     InlineKeyboardButton("🧿 ɪᴍᴅʙ", url=f"https://imdb.com/find?q={reply}")
+     InlineKeyboardButton("🧿 Iᗰᗪᗷ IᑎᖴO", url=f"https://imdb.com/find?q={reply}")
      ],[
-     InlineKeyboardButton("🙁 ʀᴇᴀsᴏɴ", callback_data="reason"),
-     InlineKeyboardButton("🎭 ɢᴏᴏɢʟᴇ", url=f"https://google.com/search?q={reply}")
+     InlineKeyboardButton("😌 ᖇᗴᗩՏOᑎ", callback_data="reason"),
+     InlineKeyboardButton("🎭 ᘜOOᘜᒪᗴ", url=f"https://google.com/search?q={reply}")
      ]]
     )    
     imdb=await get_poster(search)
     if imdb and imdb.get('poster'):
         await msg.reply_photo(photo=imdb.get('poster'), caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), url=imdb['url'], short=imdb['plot']), reply_markup=reply_markup) 
     else:
-        movielist = await msg.reply_photo(photo="https://telegra.ph/file/d30c3dc685ad9b983ad57.jpg", caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), url=imdb['url'], short=imdb['plot']), reply_markup=reply_markup)
+        await msg.reply_photo(photo="https://telegra.ph/file/d30c3dc685ad9b983ad57.jpg", caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), url="https://t.me/CL_UPDATE", short=imdb['plot']), reply_markup=reply_markup)
         return
 
 async def manual_filters(client, message, text=False):
