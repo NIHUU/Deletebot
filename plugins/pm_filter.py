@@ -1528,7 +1528,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(f"IMDb Data:\n\n🏷 Title: {imdb.get('title')}\n🎭 Genres: {imdb.get('genres')}\n📆 Year:{imdb.get('year')}\n🌟 Rating: {imdb.get('rating')} / 10\n🖋 StoryLine: <code>{imdb.get('plot')} </code>", reply_markup=InlineKeyboardMarkup(btn), show_alert=True)
         
     elif query.data == "reason":
-        await query.answer("wait..", show_alert=True)
+        await query.answer(script.REASON_TXT, show_alert=True)
         
     elif query.data == "stats":
         buttons = [[
@@ -1803,9 +1803,9 @@ async def advantage_spell_chok(msg):
     )    
     imdb=await get_poster(search)
     if imdb and imdb.get('poster'):
-        await msg.reply_photo(photo=imdb.get('poster'), caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), url=imdb['url'], short=imdb['plot']), reply_markup=reply_markup) 
+        await msg.reply_photo(photo=imdb.get('poster'), caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), group=msg.chat.title, url="https://t.me/CL_UPDATE", short=imdb['plot']), reply_markup=reply_markup) 
     else:
-        await msg.reply_photo(photo="https://telegra.ph/file/d30c3dc685ad9b983ad57.jpg", caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), url="https://t.me/CL_UPDATE", short=imdb['plot']), reply_markup=reply_markup)
+        await msg.reply_photo(photo="https://telegra.ph/file/d30c3dc685ad9b983ad57.jpg", caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), group=message.chat.title, url="https://t.me/CL_UPDATE", short=imdb['plot']), reply_markup=reply_markup)
         return
 
 async def manual_filters(client, message, text=False):
