@@ -1806,7 +1806,7 @@ async def advantage_spell_chok(msg):
         await msg.reply_photo(photo=imdb.get('poster'), caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), url=imdb['url'], short=imdb['plot']), reply_markup=reply_markup) 
     except Exception as e:
         logger.exception(e)
-        await message.reply_photo(photo="", caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), url=imdb['url'], short=imdb['plot']), reply_markup=reply_markup)
+        await message.reply_photo(photo="https://telegra.ph/file/d30c3dc685ad9b983ad57.jpg", caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), url=imdb['url'], short=imdb['plot']), reply_markup=reply_markup)
         return
 
 async def manual_filters(client, message, text=False):
