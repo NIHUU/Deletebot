@@ -1792,7 +1792,7 @@ async def advantage_spell_chok(msg):
         await asyncio.sleep(8)
         await k.delete()
         return
-    SPELL_CHECK[msg.message_id]
+    SPELL_CHECK[msg.message_id] = movielist
     reply = search.replace(" ", "+")
     reply_markup = InlineKeyboardMarkup([[
      InlineKeyboardButton("🧿 ɪᴍᴅʙ", url=f"https://imdb.com/find?q={reply}")
