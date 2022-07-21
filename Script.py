@@ -61,7 +61,7 @@ Pay attention to the following…
     SPELL_TXT = '<b>Choose a Language bro , from given below</b>'
     
     REASON_TXT = """
-<i><u><b>ʀᴇᴀsᴏɴ ᴛᴏ ɴᴏᴛ ɢᴇᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ</i></u></b>
+            𝗥𝗘𝗔𝗦𝗢𝗡
 
 • ᴄʜᴇᴄᴋ ᴛʜᴇ sᴘᴇʟʟɪɴɢ ᴏғ ʀᴇǫᴜᴇsᴛ ᴍᴏᴠɪᴇ
 • ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛᴇᴅ ᴍᴏᴠɪᴇ ɪs ɴᴏᴛ ʏᴇᴛ ʀʟᴇᴀsᴇᴅ
