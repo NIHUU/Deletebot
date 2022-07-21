@@ -1787,7 +1787,7 @@ async def advantage_spell_chok(msg):
                 movielist += [movie.get('title') for movie in imdb_s]
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
-    if not movielist:
+    if not shelby:
         k = await msg.reply("⚠︎  𝙸 𝙲𝙾𝚄𝙻𝙳𝙽'𝚃 𝙵𝙸𝙽𝙳 𝙰𝙽𝚈𝚃𝙷𝙸𝙽𝙶 𝚁𝙴𝙻𝙰𝚃𝙴𝙳 𝚃𝙾 𝚃𝙷𝙰𝚃 . 𝙲𝙷𝙴𝙲𝙺 𝚈𝙾𝚄 𝚂𝙿𝙴𝙻𝙻𝙸𝙽𝙶 ⚠︎")
         await asyncio.sleep(8)
         await k.delete()
@@ -1805,7 +1805,7 @@ async def advantage_spell_chok(msg):
     if imdb and imdb.get('poster'):
         await msg.reply_photo(photo=imdb.get('poster'), caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), url=imdb['url'], short=imdb['plot']), reply_markup=reply_markup) 
     else:
-        await msg.reply_photo(photo="https://telegra.ph/file/d30c3dc685ad9b983ad57.jpg", caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), url=imdb['url'], short=imdb['plot']), reply_markup=reply_markup)
+        shelby = await msg.reply_photo(photo="https://telegra.ph/file/d30c3dc685ad9b983ad57.jpg", caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), url=imdb['url'], short=imdb['plot']), reply_markup=reply_markup)
         return
 
 async def manual_filters(client, message, text=False):
