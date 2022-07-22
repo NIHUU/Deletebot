@@ -1806,11 +1806,10 @@ async def advantage_spell_chok(msg):
         await msg.reply_photo(photo=imdb.get('poster'), caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), group=msg.chat.title, url="https://t.me/CL_UPDATE", short=imdb['plot']), reply_markup=reply_markup) 
     else:
         await msg.reply_text(text=f"<b><u><u>𝖧𝖾𝗅𝗅𝗈 {msg.from_user.mention}</u></u>\n\n𝖨 𝖢𝗈𝗎𝗅𝖽𝗇'𝗍 𝖥𝗂𝗇𝖽 𝖠𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝖱𝖾𝗅𝖺𝗍𝖾𝖽 𝖳𝗈 𝖳𝗁𝖺𝗍\n𝖯𝗅𝖾𝖺𝗌𝖾 𝖢𝗁𝖾𝖼𝗄 𝖸𝗈𝗎𝗋 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 🤧</b>")
-        reply_markup = InlineKeyboardMarkup([[
+        buttons = [
             InlineKeyboardButton('🍁 ᖇᗴᗩՏOᑎ', "reason"),
             InlineKeyboardButton('🔎 Տᗴᗩᖇᑕᕼ', url=f'https://google.com/search?q={reply}')
-            ]]
-        )
+          ]
         return
 
 async def manual_filters(client, message, text=False):
