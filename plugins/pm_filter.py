@@ -1809,7 +1809,7 @@ async def advantage_spell_chok(msg):
         button = [
             InlineKeyboardButton('🍁 ᖇᗴᗩՏOᑎ', "reason"),
             InlineKeyboardButton('🔎 Տᗴᗩᖇᑕᕼ', url=f'https://google.com/search?q={reply}')
-          ]
+        ]
         return
 
 async def manual_filters(client, message, text=False):
