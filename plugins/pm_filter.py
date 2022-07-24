@@ -1781,7 +1781,7 @@ async def advantage_spell_chok(msg):
     if not g_s:
         buttons = [[
             InlineKeyboardButton('🍁 ᖇᗴᗩՏOᑎ', "reason"),
-            InlineKeyboardButton('🔎 Տᗴᗩᖇᑕᕼ', url=f'https://google.com/search?q={reply}')
+            InlineKeyboardButton('🔎 Տᗴᗩᖇᑕᕼ', url=f'https://google.com/search?q={msg.text}')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         a = await msg.reply_text(text=f"<b><u><u>𝖧𝖾𝗅𝗅𝗈 {msg.from_user.mention}</u></u>\n\n𝖨 𝖢𝗈𝗎𝗅𝖽𝗇'𝗍 𝖥𝗂𝗇𝖽 𝖠𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝖱𝖾𝗅𝖺𝗍𝖾𝖽 𝖳𝗈 𝖳𝗁𝖺𝗍\n𝖯𝗅𝖾𝖺𝗌𝖾 𝖢𝗁𝖾𝖼𝗄 𝖸𝗈𝗎𝗋 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 🤧</b>", reply_markup=reply_markup)
@@ -1816,7 +1816,7 @@ async def advantage_spell_chok(msg):
     if not movielist:
         buttons = [[
             InlineKeyboardButton('🍁 ᖇᗴᗩՏOᑎ', "reason"),
-            InlineKeyboardButton('🔎 Տᗴᗩᖇᑕᕼ', url=f'https://google.com/search?q={reply}')
+            InlineKeyboardButton('🔎 Տᗴᗩᖇᑕᕼ', url=f'https://google.com/search?q={msg.text}')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         k = await msg.reply_text(text=f"<b><u><u>𝖧𝖾𝗅𝗅𝗈 {msg.from_user.mention}</u></u>\n\n𝖨 𝖢𝗈𝗎𝗅𝖽𝗇'𝗍 𝖥𝗂𝗇𝖽 𝖠𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝖱𝖾𝗅𝖺𝗍𝖾𝖽 𝖳𝗈 𝖳𝗁𝖺𝗍\n𝖯𝗅𝖾𝖺𝗌𝖾 𝖢𝗁𝖾𝖼𝗄 𝖸𝗈𝗎𝗋 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 🤧</b>", reply_markup=reply_markup)
