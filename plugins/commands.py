@@ -284,10 +284,9 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
-    buttons = [
-        [
-            InlineKeyboardButton('➕ 𝖠𝖣𝖣 𝖡𝖮𝖳 𝖳𝖮 𝖸𝖮𝖴𝖱 𝖦𝖱𝖮𝖴𝖯 ➕', url="http://t.me/CL_FILTER_BOT?startgroup=true")
-        ]
+    buttons = [[
+        InlineKeyboardButton('➕ 𝖠𝖣𝖣 𝖡𝖮𝖳 𝖳𝖮 𝖸𝖮𝖴𝖱 𝖦𝖱𝖮𝖴𝖯 ➕', url="http://t.me/CL_FILTER_BOT?startgroup=true")
+    ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
