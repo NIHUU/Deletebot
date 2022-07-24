@@ -104,7 +104,7 @@ async def fil_mod(client, message):
 @Client.on_message(filters.command("auto_status"))
 async def auto_status(client, message):
       
-      if FILTER_MODE.get True:
+      if FILTER_MODE <True:
           statuss[str(message.chat.id)]="Enabled"
       else:
           statuss[str(message.chat.id)]="Disabled"
@@ -343,16 +343,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         user_id = query.from_user.id
 
         if act == "":
-            stat = "𝙲𝙾𝙽𝙽𝙴𝙲𝚃"
+            stat = "ᴄᴏɴɴᴇᴄᴛ"
             cb = "connectcb"
         else:
-            stat = "𝙳𝙸𝚂𝙲𝙾𝙽𝙽𝙴𝙲𝚃"
+            stat = "ᴅɪsᴄᴏɴɴᴇᴄᴛ"
             cb = "disconnect"
 
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton(f"{stat}", callback_data=f"{cb}:{group_id}"),
-             InlineKeyboardButton("𝙳𝙴𝙻𝙴𝚃𝙴", callback_data=f"deletecb:{group_id}")],
-            [InlineKeyboardButton("𝙱𝙰𝙲𝙺", callback_data="backcb")]
+             InlineKeyboardButton("ᴅᴇʟᴇᴛᴇ", callback_data=f"deletecb:{group_id}")],
+            [InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="backcb")]
         ])
 
         await query.message.edit_text(
