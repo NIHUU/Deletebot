@@ -100,6 +100,21 @@ async def fil_mod(client, message):
           await m.edit("**Aᴜᴛᴏ Fɪʟᴛᴇʀ Dɪsᴀʙʟᴇᴅ**")
       else:
           await m.edit("𝚄𝚂𝙴 :- /autofilter on 𝙾𝚁 /autofilter off")
+            
+@Client.on_message(filters.command("auto_status"))
+async def auto_status(client, message):
+      
+      if args in mode_on:
+          statuss[str(message.chat.id)]="Enabled"
+      else:
+          statuss[str(message.chat.id)]="Disabled"
+     
+      TRY_TXT = f"Auto Filter : {statuss}"
+      buttons = [[
+          InlineKeyboardButton('group', 'dupe')
+      ]]
+      await message.reply_text(TRY_TXT, reply_markup=InlineKeyboardMarkup(buttons))
+          
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client,message):
