@@ -493,8 +493,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             size = f"{files.file_size}"
             mention = f"{query.from_user.mention}"
         buttons = [[
-                InlineKeyboardButton('✨️ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ✨️', url=f'https://t.me/cinema_lookam')
-            ]]      
+            InlineKeyboardButton('➕ 𝖠𝖣𝖣 𝖡𝖮𝖳 𝖳𝖮 𝖸𝖮𝖴𝖱 𝖦𝖱𝖮𝖴𝖯 ➕', url=f'http://t.me/CL_FILTER_BOT?startgroup=true')
+        ]]      
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
@@ -559,8 +559,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if f_caption is None:
             f_caption = f"{title}"
         buttons = [[
-                InlineKeyboardButton('✨️ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ✨️', url=f'https://t.me/cinema_lookam')
-            ]]
+            InlineKeyboardButton('➕ 𝖠𝖣𝖣 𝖡𝖮𝖳 𝖳𝖮 𝖸𝖮𝖴𝖱 𝖦𝖱𝖮𝖴𝖯 ➕', url=f'http://t.me/CL_FILTER_BOT?startgroup=true')
+        ]]
         await query.answer("ᴄʜᴇᴄᴋɪɴɢ....")
         n = await client.send_cached_media(
             chat_id=CH_FILTER,
