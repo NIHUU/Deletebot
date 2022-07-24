@@ -1786,6 +1786,7 @@ async def advantage_spell_chok(msg):
         reply_markup = InlineKeyboardMarkup(buttons)
         a = await msg.reply_text(text=f"<b><u><u>𝖧𝖾𝗅𝗅𝗈 {msg.from_user.mention}</u></u>\n\n𝖨 𝖢𝗈𝗎𝗅𝖽𝗇'𝗍 𝖥𝗂𝗇𝖽 𝖠𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝖱𝖾𝗅𝖺𝗍𝖾𝖽 𝖳𝗈 𝖳𝗁𝖺𝗍\n𝖯𝗅𝖾𝖺𝗌𝖾 𝖢𝗁𝖾𝖼𝗄 𝖸𝗈𝗎𝗋 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 🤧</b>", reply_markup=reply_markup)
         await asyncio.sleep(100)
+        await msg.delete()
         await a.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
@@ -1820,6 +1821,7 @@ async def advantage_spell_chok(msg):
         reply_markup = InlineKeyboardMarkup(buttons)
         k = await msg.reply_text(text=f"<b><u><u>𝖧𝖾𝗅𝗅𝗈 {msg.from_user.mention}</u></u>\n\n𝖨 𝖢𝗈𝗎𝗅𝖽𝗇'𝗍 𝖥𝗂𝗇𝖽 𝖠𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝖱𝖾𝗅𝖺𝗍𝖾𝖽 𝖳𝗈 𝖳𝗁𝖺𝗍\n𝖯𝗅𝖾𝖺𝗌𝖾 𝖢𝗁𝖾𝖼𝗄 𝖸𝗈𝗎𝗋 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 🤧</b>", reply_markup=reply_markup)
         await asyncio.sleep(100)
+        await msg.delete()
         await k.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
@@ -1845,6 +1847,7 @@ async def advantage_spell_chok(msg):
         reply_markup = InlineKeyboardMarkup(buttons)
         a = await msg.reply_text(text=f"<b><u><u>𝖧𝖾𝗅𝗅𝗈 {msg.from_user.mention}</u></u>\n\n𝖨 𝖢𝗈𝗎𝗅𝖽𝗇'𝗍 𝖥𝗂𝗇𝖽 𝖠𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝖱𝖾𝗅𝖺𝗍𝖾𝖽 𝖳𝗈 𝖳𝗁𝖺𝗍\n𝖯𝗅𝖾𝖺𝗌𝖾 𝖢𝗁𝖾𝖼𝗄 𝖸𝗈𝗎𝗋 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 🤧</b>", reply_markup=reply_markup)
         await asyncio.sleep(100)
+        await msg.delete()
         await a.delete()
         return
 
