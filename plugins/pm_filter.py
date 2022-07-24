@@ -1751,8 +1751,11 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"<b><i>📀 ᴛɪᴛʟᴇ :  : {search}\n🗣️ ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {message.from_user.mention}\n🦋 ɢʀᴏᴜᴘ 🦋: {message.chat.title}</i></b>"
     if imdb and imdb.get('poster'):
         try:
-            await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+            ms = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                       reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(259200)
+            await message.delete()
+            await ms.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
@@ -1776,9 +1779,14 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("⚠︎ 𝙸 𝙲𝙾𝚄𝙻𝙳 𝙽𝙾𝚃 𝙵𝙸𝙽𝙳 𝙰𝙽𝚈 𝙼𝙾𝚅𝙸𝙴 𝚁𝙴𝙻𝙰𝚃𝙴𝙳 𝚃𝙾 𝚃𝙷𝙰𝚃 ⚠︎")
-        await asyncio.sleep(8)
-        await k.delete()
+        buttons = [[
+            InlineKeyboardButton('🍁 ᖇᗴᗩՏOᑎ', "reason"),
+            InlineKeyboardButton('🔎 Տᗴᗩᖇᑕᕼ', url=f'https://google.com/search?q={reply}')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        a = await msg.reply_text(text=f"<b><u><u>𝖧𝖾𝗅𝗅𝗈 {msg.from_user.mention}</u></u>\n\n𝖨 𝖢𝗈𝗎𝗅𝖽𝗇'𝗍 𝖥𝗂𝗇𝖽 𝖠𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝖱𝖾𝗅𝖺𝗍𝖾𝖽 𝖳𝗈 𝖳𝗁𝖺𝗍\n𝖯𝗅𝖾𝖺𝗌𝖾 𝖢𝗁𝖾𝖼𝗄 𝖸𝗈𝗎𝗋 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 🤧</b>", reply_markup=reply_markup)
+        await asyncio.sleep(100)
+        await a.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
     gs = list(filter(regex.match, g_s))
@@ -1805,8 +1813,13 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("⚠︎  𝙸 𝙲𝙾𝚄𝙻𝙳𝙽'𝚃 𝙵𝙸𝙽𝙳 𝙰𝙽𝚈𝚃𝙷𝙸𝙽𝙶 𝚁𝙴𝙻𝙰𝚃𝙴𝙳 𝚃𝙾 𝚃𝙷𝙰𝚃 . 𝙲𝙷𝙴𝙲𝙺 𝚈𝙾𝚄 𝚂𝙿𝙴𝙻𝙻𝙸𝙽𝙶 ⚠︎")
-        await asyncio.sleep(8)
+        buttons = [[
+            InlineKeyboardButton('🍁 ᖇᗴᗩՏOᑎ', "reason"),
+            InlineKeyboardButton('🔎 Տᗴᗩᖇᑕᕼ', url=f'https://google.com/search?q={reply}')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        k = await msg.reply_text(text=f"<b><u><u>𝖧𝖾𝗅𝗅𝗈 {msg.from_user.mention}</u></u>\n\n𝖨 𝖢𝗈𝗎𝗅𝖽𝗇'𝗍 𝖥𝗂𝗇𝖽 𝖠𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝖱𝖾𝗅𝖺𝗍𝖾𝖽 𝖳𝗈 𝖳𝗁𝖺𝗍\n𝖯𝗅𝖾𝖺𝗌𝖾 𝖢𝗁𝖾𝖼𝗄 𝖸𝗈𝗎𝗋 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 🤧</b>", reply_markup=reply_markup)
+        await asyncio.sleep(100)
         await k.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
@@ -1822,6 +1835,7 @@ async def advantage_spell_chok(msg):
     if imdb and imdb.get('poster'):
         ms = await msg.reply_photo(photo=imdb.get('poster'), caption=script.IMDB_MOVIE_2.format(mention=msg.from_user.mention, query=search, title=imdb.get('title'), rating=imdb.get('rating'), genres=imdb.get('genres'), year=imdb.get('year'), runtime=imdb.get('runtime'), language=imdb.get('languages'), group=msg.chat.title, url="https://t.me/CL_UPDATE", short=imdb['plot']), reply_markup=reply_markup) 
         await asyncio.sleep(259200)
+        await msg.delete()
         await ms.delete()
     else:
         buttons = [[
@@ -1829,8 +1843,8 @@ async def advantage_spell_chok(msg):
             InlineKeyboardButton('🔎 Տᗴᗩᖇᑕᕼ', url=f'https://google.com/search?q={reply}')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await msg.reply_text(text=f"<b><u><u>𝖧𝖾𝗅𝗅𝗈 {msg.from_user.mention}</u></u>\n\n𝖨 𝖢𝗈𝗎𝗅𝖽𝗇'𝗍 𝖥𝗂𝗇𝖽 𝖠𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝖱𝖾𝗅𝖺𝗍𝖾𝖽 𝖳𝗈 𝖳𝗁𝖺𝗍\n𝖯𝗅𝖾𝖺𝗌𝖾 𝖢𝗁𝖾𝖼𝗄 𝖸𝗈𝗎𝗋 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 🤧</b>", reply_markup=reply_markup)
-        await asycncio.sleep(100)
+        a = await msg.reply_text(text=f"<b><u><u>𝖧𝖾𝗅𝗅𝗈 {msg.from_user.mention}</u></u>\n\n𝖨 𝖢𝗈𝗎𝗅𝖽𝗇'𝗍 𝖥𝗂𝗇𝖽 𝖠𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝖱𝖾𝗅𝖺𝗍𝖾𝖽 𝖳𝗈 𝖳𝗁𝖺𝗍\n𝖯𝗅𝖾𝖺𝗌𝖾 𝖢𝗁𝖾𝖼𝗄 𝖸𝗈𝗎𝗋 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 🤧</b>", reply_markup=reply_markup)
+        await asyncio.sleep(100)
         await a.delete()
         return
 
