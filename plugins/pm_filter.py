@@ -104,7 +104,7 @@ async def fil_mod(client, message):
 @Client.on_message(filters.command("auto_status"))
 async def auto_status(client, message):
       
-      if FILTER_MODE True:
+      if FILTER_MODE in mode_on:
           statuss[str(message.chat.id)]="Enabled"
       else:
           statuss[str(message.chat.id)]="Disabled"
