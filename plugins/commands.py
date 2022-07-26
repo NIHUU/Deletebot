@@ -100,7 +100,7 @@ async def start(client, message):
         ]
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**𝗝𝗼𝗶𝗻 𝗠𝘆 𝗚𝗿𝗼𝘂𝗽 𝗧𝗼 𝗨𝘀𝗲 𝗧𝗵𝗶𝘀 𝗕𝗼𝘁!**",
+            text="**ᴊᴏɪɴ ᴛʜᴇ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ᴛʜᴇɴ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ ᴄʟɪᴄᴋ ᴛʜᴇ ʟɪɴᴋ ᴀɢᴀɪɴ ғᴏʀ ғɪʟᴇs.!**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode="markdown"
             )
