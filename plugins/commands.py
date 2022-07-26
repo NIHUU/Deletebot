@@ -101,8 +101,7 @@ async def start(client, message):
 
         if message.command[1] != "subscribe":
             try:
-            	pre = 'checksubp' if kk == 'filep' else 'checksub' 
-            	btn.append([InlineKeyboardButton("⚙️ 𝚃𝚁𝚈 𝙰𝙶𝙰𝙸𝙽 ⚙️", callback_data=f"{pre}#{file_id}")])
+            	btn.append([InlineKeyboardButton("⚙️ 𝚃𝚁𝚈 𝙰𝙶𝙰𝙸𝙽 ⚙️", callback_data=f"checksubp#{file_id}")])
             except IndexError:
                 btn.append([InlineKeyboardButton("⚙️ 𝚃𝚁𝚈 𝙰𝙶𝙰𝙸𝙽 ⚙️", url=f"https://t.me/{temp.U_NAME}/{message.command[1]}")])
         await client.send_message(
