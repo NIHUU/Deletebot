@@ -27,11 +27,8 @@ async def start(client, message):
 
     if message.chat.type in ['group', 'supergroup']:
         buttons = [[
-        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/CL_FILTER_BOT?startgroup=true') ] ,
-      [
-        InlineKeyboardButton('🕊️ ɢʀᴏᴜᴘ', url="https://t.me/movie_lookam"),
-        InlineKeyboardButton('💿 ᴄʜᴀɴɴᴇʟ', url="https://t.me/CL_UPDATE")
-    ]]
+        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/CL_FILTER_BOT?startgroup=true') 
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -147,7 +144,7 @@ async def start(client, message):
         file_id = data
         pre = ""
     if data.split("-", 1)[0] == "BATCH":
-        sts = await message.reply("Please wait")
+        sts = await message.reply("**sᴇɴᴅɪɴɢ ғɪʟᴇs....**")
         file_id = data.split("-", 1)[1]
         msgs = BATCH_FILES.get(file_id)
         if not msgs:
@@ -195,7 +192,7 @@ async def start(client, message):
         await sts.delete()
         return
     elif data.split("-", 1)[0] == "DSTORE":
-        sts = await message.reply("Please wait")
+        sts = await message.reply("**sᴇɴᴅɪɴɢ ғɪʟᴇs....**")
         b_string = data.split("-", 1)[1]
         decoded = (base64.urlsafe_b64decode(b_string + "=" * (-len(b_string) % 4))).decode("ascii")
         try:
@@ -253,7 +250,7 @@ async def start(client, message):
             file = getattr(msg, filetype)
             title = file.file_name
             size=get_size(file.file_size)
-            f_caption = f"<code>{title}</code>"
+            f_caption = f"<code>[CL]{title}</code>"
             if CUSTOM_FILE_CAPTION:
                 try:
                     f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='')
@@ -277,7 +274,7 @@ async def start(client, message):
     if f_caption is None:
         f_caption = f"{files.file_name}"
     buttons = [[
-        InlineKeyboardButton('➕ 𝖠𝖣𝖣 𝖡𝖮𝖳 𝖳𝖮 𝖸𝖮𝖴𝖱 𝖦𝖱𝖮𝖴𝖯 ➕', url="http://t.me/CL_FILTER_BOT?startgroup=true")
+        InlineKeyboardButton('➕ ᴀᴅᴅ ʙᴏᴛ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url="http://t.me/CL_FILTER_BOT?startgroup=true")
     ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
