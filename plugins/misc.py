@@ -87,9 +87,11 @@ async def aboutme(client, message):
             photo="https://telegra.ph/file/e5a98d4c5de82c58b450c.jpg",
             caption=script.ABOUT_TXT,
             reply_markup=reply_markup,
-            parse_mode='html'
-        )
-        
+
+@Client.on_message(filters.private & filters.command('hello'))
+async def test_command(client, message):
+    await message.reply_text('hi')
+    
 @Client.on_message(filters.command(["info"]))
 async def who_is(client, message):
     # https://github.com/SpEcHiDe/PyroGramBot/blob/master/pyrobot/plugins/admemes/whois.py#L19
