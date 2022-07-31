@@ -96,7 +96,7 @@ async def test_command(client, message):
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply_text(
-        text=f"<b>Change Your Settings for {title} As Your Wish ⚙</b>",
+        text=f"<b>Change Your Settings As Your Wish ⚙</b>",
         reply_markup=reply_markup,
         parse_mode="html",
         reply_to_message_id=message.message_id
