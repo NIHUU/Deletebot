@@ -1597,9 +1597,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
       )
-        
-    elif query.data == "settings":
-        userid = message.from_user.id if message.from_user else None
+  elif query.data == "settings":
+    message = query
+    userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id} in PM")
     chat_type = message.chat.type
