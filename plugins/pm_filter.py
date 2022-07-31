@@ -104,7 +104,7 @@ async def fil_mod(client, message):
 @Client.on_message(filters.command("auto_status"))
 async def auto_status(client, message):
       
-      if button == "True":
+      if settings["button"] == "True":
           statuss="Enabled"
       else:
           statuss="Disabled"
@@ -1625,7 +1625,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 [
                     InlineKeyboardButton('ғɪʟᴛᴇʀ ᴛʏᴘᴇ',
                                          callback_data=f'setgs#filter#{settings["filter"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('ON' if settings["button"] else 'OFF',
+                    InlineKeyboardButton('ON' if settings["filter"] else 'OFF',
                                          callback_data=f'setgs#filter#{settings["filter"]}#{str(grp_id)}')
                 ],
                 [
