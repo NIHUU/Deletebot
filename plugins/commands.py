@@ -505,7 +505,13 @@ async def report(bot, message):
     await k.delete()
     return
 
-
+@Client.on_message(filters.private('hello'))
+async def hello_command(client, msg):
+    await msg.reply_text('hi')
+    
+@Client.on_message(filters.group('hello'))
+async def hello_command(client, msg):
+    await msg.reply_text('hi')
 
 @Client.on_message(filters.command('set_template'))
 async def save_template(client, message):
