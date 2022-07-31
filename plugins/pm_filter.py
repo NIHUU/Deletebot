@@ -1651,7 +1651,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
-            await query.message.edit('ʜᴇʀᴇ ʏᴏᴜ ᴄᴀɴ ᴇᴅɪᴛ ᴀs ʏᴏᴜ ᴡɪsʜ ⚙️)
+            await query.message.edit('ʜᴇʀᴇ ʏᴏᴜ ᴄᴀɴ ᴇᴅɪᴛ ᴀs ʏᴏᴜ ᴡɪsʜ ⚙️', reply_markup=reply_markup)
             
 
     elif query.data.startswith("setgs"):
