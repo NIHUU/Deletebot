@@ -87,6 +87,7 @@ async def aboutme(client, message):
             photo="https://telegra.ph/file/e5a98d4c5de82c58b450c.jpg",
             caption=script.ABOUT_TXT,
             reply_markup=reply_markup,
+        )
 
 @Client.on_message(filters.private & filters.command('hello'))
 async def test_command(client, message):
