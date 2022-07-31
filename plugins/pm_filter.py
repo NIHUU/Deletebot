@@ -1622,12 +1622,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('𝐒𝐈𝐍𝐆𝐋𝐄' if settings["button"] else '𝐃𝐎𝐔𝐁𝐋𝐄',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
-                [
-                    InlineKeyboardButton('ғɪʟᴛᴇʀ ᴛʏᴘᴇ',
-                                         callback_data=f'setgs#filter#{settings["filter"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('ON' if settings["filter"] else 'OFF',
-                                         callback_data=f'setgs#filter#{settings["filter"]}#{str(grp_id)}')
-                ],
+                
                 [
                     InlineKeyboardButton('𝐁𝐎𝐓 𝐏𝐌', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
                     InlineKeyboardButton('✅ 𝐘𝐄𝐒' if settings["botpm"] else '🗑️ 𝐍𝐎',
