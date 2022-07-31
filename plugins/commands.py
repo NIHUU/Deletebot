@@ -508,7 +508,7 @@ async def report(bot, message):
 
     
 @Client.on_message(filters.private & filters.command('hello'))
-async def hello_command(client, msg):
+async def hello_command(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id} in PM")
