@@ -103,22 +103,22 @@ async def fil_mod(client, message):
             
 @Client.on_message(filters.command("auto_status"))
 async def auto_status(client, message):
-                  
+        settings = await get_settings(message.message.chat.id)
 
-      if settings["button"] == "True":
-          statuss="Enabled"
-      else:
-          statuss="Disabled"
+        if settings["button"] == "True":
+            statuss="Enabled"
+        else:
+            statuss="Disabled"
      
-      TRY_TXT = f"Auto Filter : {statuss}"
-      buttons = [[
-          InlineKeyboardButton('group', 'dupe')
-      ]]
-      await message.reply_text(TRY_TXT, reply_markup=InlineKeyboardMarkup(buttons))
+        TRY_TXT = f"Auto Filter : {statuss}"
+        buttons = [[
+            InlineKeyboardButton('group', 'dupe')
+        ]]
+        await message.reply_text(TRY_TXT, reply_markup=InlineKeyboardMarkup(buttons))
           
 @Client.on_message(filters.command("filter"))
 async def auto_status(client, message):
-        settings = await get_settings(msg.message.chat.id)
+        settings = await get_settings(message.message.chat.id)
         
         if settings['filter']:
             FILTER_MODE[str(message.chat.id)] = "True" 
