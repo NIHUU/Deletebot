@@ -4,7 +4,7 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, Media
 from Script import script
 from info import PICS
 from info import IMDB_TEMPLATE
-from utils import extract_user, get_file_id, get_poster, last_online
+from utils import extract_user, get_file_id, get_poster, last_online, temp
 import time
 import random
 from datetime import datetime
@@ -89,7 +89,7 @@ async def aboutme(client, message):
             reply_markup=reply_markup,
         )
 
-@Client.on_message(filters.group & filters.command('hello'))
+@Client.on_message(filters.group & filters.command('settings'))
 async def test_command(client, message):
     buttons = [[
         InlineKeyboardButton("Oᴘᴇɴ Hᴇʀᴇ", callback_data="settings"),
