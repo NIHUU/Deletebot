@@ -1597,7 +1597,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
       )
-  elif query.data == "settings":
+    elif query.data == "settings":
     message = query
     userid = message.from_user.id if message.from_user else None
     if not userid:
