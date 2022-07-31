@@ -103,16 +103,15 @@ async def fil_mod(client, message):
             
 @Client.on_message(filters.command("auto_status"))
 async def auto_status(client, message):
-        settings = await get_settings(message.message.chat.id)
 
-        if settings["button"] == "True":
+        if SINGLE_BUTTON == "True":
             statuss="Enabled"
         else:
             statuss="Disabled"
      
-        TRY_TXT = f"Auto Filter : {statuss}"
+        TRY_TXT = f"Single Button : {statuss}"
         buttons = [[
-            InlineKeyboardButton('group', 'dupe')
+            InlineKeyboardButton('Change settings', callback_data="setgs")
         ]]
         await message.reply_text(TRY_TXT, reply_markup=InlineKeyboardMarkup(buttons))
           
