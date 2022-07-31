@@ -103,7 +103,8 @@ async def fil_mod(client, message):
             
 @Client.on_message(filters.command("auto_status"))
 async def auto_status(client, message):
-      
+                  
+
       if settings["button"] == "True":
           statuss="Enabled"
       else:
@@ -115,7 +116,15 @@ async def auto_status(client, message):
       ]]
       await message.reply_text(TRY_TXT, reply_markup=InlineKeyboardMarkup(buttons))
           
-
+@Client.on_message(filters.command("filter"))
+async def auto_status(client, message):
+        settings = await get_settings(msg.message.chat.id)
+        
+        if settings['filter']:
+            FILTER_MODE[str(message.chat.id)] = "True" 
+        else:
+            FILTER_MODE[str(message.chat.id)] = "False"
+            
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client,message):
     group_id = message.chat.id
@@ -1531,15 +1540,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "autofiltermode":
-        settings = await get_settings(msg.message.chat.id)
-        
-        if settings['filter']:
-            FILTER_MODE[str(message.chat.id)] = "True" 
-        else:
-            FILTER_MODE[str(message.chat.id)] = "False"
-            
-            
+          
     elif query.data == "movss":
         await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ⪼ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ⪼ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ⪼ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴋɢꜰ ᴄʜᴀᴘᴛᴇʀ 2  2022\n\n✘ ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© Tʜᴏᴍᴀs Sʜᴇʟʙʏ", show_alert=True)
 
