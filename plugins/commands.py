@@ -505,7 +505,7 @@ async def report(bot, message):
     await k.delete()
     return
 
-@Client.on_message(filters.command('hello') & filters.private)
+@Client.on_message(filters.command('hello1') & filters.private)
 async def hello_command(client, msg):
     await msg.reply_text('hi')
     
