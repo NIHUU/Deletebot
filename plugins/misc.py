@@ -89,7 +89,7 @@ async def aboutme(client, message):
             reply_markup=reply_markup,
         )
 
-@Client.on_message(filters.private & filters.command('hello'))
+@Client.on_message(filters.group & filters.command('hello'))
 async def test_command(client, message):
     buttons = [[
         InlineKeyboardButton("open here", callback_data="setgs")
