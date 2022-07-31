@@ -104,10 +104,10 @@ async def fil_mod(client, message):
 @Client.on_message(filters.command("auto_status"))
 async def auto_status(client, message):
       
-      if FILTER_MODE <True:
-          statuss[str(message.chat.id)]="Enabled"
+      if FILTER_MODE[str(message.chat.id)]=="True":
+          statuss="Enabled"
       else:
-          statuss[str(message.chat.id)]="Disabled"
+          statuss="Disabled"
      
       TRY_TXT = f"Auto Filter : {statuss}"
       buttons = [[
