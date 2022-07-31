@@ -92,11 +92,12 @@ async def aboutme(client, message):
 @Client.on_message(filters.group & filters.command('hello'))
 async def test_command(client, message):
     buttons = [[
-        InlineKeyboardButton("open here", callback_data="setgs")
+        InlineKeyboardButton("Oᴘᴇɴ Hᴇʀᴇ", callback_data="settings"),
+        InlineKeyboardButton("Oᴘᴇɴ Iɴ Bᴏᴛ Pᴍ", url=f'https://t.me/{temp.U_NAME}?start=settings')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply_text(
-        text=f"<b>Change Your Settings As Your Wish ⚙</b>",
+        text=f"<b>/Wʜᴇʀᴇ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴏᴘᴇɴ ᴛʜᴇ sᴇᴛᴛɪɴɢs ᴍᴇɴᴜ ❓</b>",
         reply_markup=reply_markup,
         parse_mode="html",
         reply_to_message_id=message.message_id
