@@ -4,7 +4,7 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, Media
 from Script import script
 from info import PICS
 from info import IMDB_TEMPLATE
-from utils import extract_user, get_file_id, get_poster, last_online, temp
+from utils import extract_user, get_file_id, get_poster, last_online, temp, get_settings, save_group_settings
 import time
 import random
 from datetime import datetime
