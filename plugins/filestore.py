@@ -1,9 +1,9 @@
 #(©)Codexbotz
 
-from pyrogram import Client, filters
+from pyrogram import Client as Bot
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from info import ADMINS
-from bot import Bot
+from pyrogram import filters
 from helper_func import encode, get_message_id
 
 @Bot.on_message(filters.private & filters.command('batch'))
