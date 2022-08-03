@@ -237,7 +237,8 @@ async def start(client, message):
         return await sts.delete()
         
 
-    files_ = await get_file_details(file_id)           
+    files_ = await get_file_details(file_id)        
+        pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
         try:
             msg = await client.send_cached_media(
                 chat_id=message.from_user.id,
