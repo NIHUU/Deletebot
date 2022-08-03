@@ -7,7 +7,7 @@ from pyrogram import filters
 from helper_func import encode, get_message_id
 
 @Client.on_message(filters.private & filters.command('batch'))
-async def batch(client: Client, message: Message):
+async def batch(client, message):
     while True:
         try:
             first_message = await client.ask(text = "<b>𝙵𝙾𝚁𝚆𝙰𝚁𝙳 𝚃𝙷𝙴 𝙵𝙸𝚁𝚂𝚃 𝙼𝙴𝚂𝚂𝙰𝙶𝙴 𝙵𝚁𝙾𝙼 𝚃𝙷𝙴 𝙳𝙱 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 (𝚆𝙸𝚃𝙷 𝙵𝙾𝚁𝚆𝙰𝚁𝙳 𝚀𝙾𝚄𝚃𝙴)....\n\n𝙾𝚁\n\n𝚂𝙴𝙽𝙳 𝚃𝙷𝙴 𝙿𝙾𝚂𝚃 𝙻𝙸𝙽𝙺</b>", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
