@@ -2,11 +2,10 @@
 
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from bot import Bot
-from config import ADMINS
+from info import ADMINS
 from helper_func import encode, get_message_id
 
-@Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('batch'))
+@Client.on_message(filters.private & filters.user(ADMINS) & filters.command('batch'))
 async def batch(client: Client, message: Message):
     while True:
         try:
@@ -40,7 +39,7 @@ async def batch(client: Client, message: Message):
     await second_message.reply_text(f"<b>𝙷𝙴𝚁𝙴 𝙸𝚂 𝚈𝙾𝚄𝚁 𝙻𝙸𝙽𝙺</b>\n\n{link}", quote=True, reply_markup=reply_markup)
 
 
-@Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('genlink'))
+@Client.on_message(filters.private & filters.user(ADMINS) & filters.command('genlink'))
 async def link_generator(client: Client, message: Message):
     while True:
         try:
